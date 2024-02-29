@@ -1,23 +1,176 @@
-<div>
-    <header>
-      <h1>Bienvenido a mi Aplicación</h1>
-    </header>
-  
-    <nav>
-      <ul>
-        <li><a routerLink="/registro">Registro</a></li>
-        <li><a routerLink="/inicio-sesion">Inicio de Sesión</a></li>
-        <li><a routerLink="/update">Update</a></li>
-      </ul>
-    </nav>
-  
-    <main>
-      <p>Esta es la página principal de la aplicación. Aquí puedes agregar contenido relevante.</p>
-      <p>Por ejemplo, podrías proporcionar información sobre tu aplicación o algún mensaje de bienvenida.</p>
-    </main>
-  
-    <footer>
-      <p>© 2024 Mi Aplicación</p>
-    </footer>
+
+
+<div class="containerone">
+  <header>
+    <div class="left-section">
+      <div class="imagen">
+        <img src="../../assets/novel.png" alt="Mi sitio web">
+      </div>
+      <div class="dropdown">
+        <a href="#">Browse</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#">Books</a>
+            <div class="submenu-content">
+              <div class="submenu-content1">
+                <a href="#">Fan Fiction 1</a>
+                <a href="#">Fan Fiction 2</a>
+                <a href="#">Fan Fiction 3</a>
+                <a href="#">Fan Fiction 1</a>
+                <a href="#">Fan Fiction 2</a>
+                <a href="#">Fan Fiction 3</a>
+              </div>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#">Novels</a>
+            <div class="submenu-content">
+              <a href="#">Romance</a>
+              <a href="#">Thriller</a>
+              <a href="#">Science Fiction</a>
+            </div>
+          </div>
+          <div class="submenu">
+            <a href="#">Fan Fic</a>
+            <div class="submenu-content">
+              <a href="#">Fan Fiction 1</a>
+              <a href="#">Fan Fiction 2</a>
+              <a href="#">Fan Fiction 3</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Rankings</a>
+        <div class="dropdown-content">
+          <div class="submenu">
+            <a href="#">Books</a>
+          </div>
+          <div class="submenu">
+            <a href="#">Novels</a>
+          </div>
+          <div class="submenu">
+            <a href="#">Fan Fic</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="search">
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="sign-in">
+        <button routerLink="/registro">Sign In</button>
+      </div>
+    </div>
+  </header>
+  <hr/>
+</div>
+<hr/>
+<hr/>
+
+
+
+<div class="principal">
+<div class="container9">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="title1">
+        <h4>Weekly Book</h4>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="title2">
+        <h4>Meet Webnovel</h4>
+      </div>
+    </div>
   </div>
-  
+</div>
+</div>
+<div class="wrapper">
+  <div class="custom-slide-container">
+    <ngb-carousel [interval]="3500" class="custom-carousel"> <!-- intervalo de 3 segundos -->
+      <ng-template ngbSlide *ngFor="let slide of slides">
+        <img [src]="slide.image" alt="{{ slide.title }}" class="custom-slide-image">
+        <div class="carousel-caption">
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.description }}</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+
+  <div class="container-10">
+
+    <div class="outer-container">
+
+      <div class="webnovel-item">
+        <hr class="hr-1">
+        <div class="inner-container">
+          <a href="https://tudireccionweb.com" class="custom-link">
+          <div class="webnovel-text">
+            <h4 class="webnovel-item-title">WebNovel Author Benefit</h4>
+            <p class="webnovel-item-description">Why should you choose WebNovel as your creation startline?</p>
+          </div>
+          </a>
+          <img src="../../assets/Henry.jpg" alt="WebNovel Author Benefit" class="webnovel-image">
+          
+        </div> <hr class="hr-1">
+        <div class="inner-container">
+          <a href="https://tudireccionweb.com" class="custom-link">
+
+          <div class="webnovel-text">
+            <h4 class="webnovel-item-title">WebNovel Author Benefit</h4>
+            <p class="webnovel-item-description">Why should you choose WebNovel as your creation startline?</p>
+          </div>
+          </a>
+          <img src="../../assets/Henry.jpg" alt="WebNovel Author Benefit" class="webnovel-image">
+        </div>
+        <hr class="hr-1">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<hr class="hr-1">
+
+<div class="title3">
+  <h4>Weekly Novels</h4>
+</div>
+
+
+
+
+<div class="container">
+  <div class="carousel">
+    <div class="slides" [style.transform]="'translateX(-' + currentSlide * (330 / slidesa.length) + '%)'"
+         (mousedown)="onMouseDown($event)">
+      <div class="slide" *ngFor="let slide of slidesa; let i = index;">
+        <img [src]="slide.image" alt="Slide Image" class="carousel-image">
+      </div>
+    </div>
+    <div class="navigation-dots">
+      <span class="dot" *ngFor="let slide of slidesa; let i = index;" (click)="goToSlide(i)" [class.active]="currentSlide === i"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
