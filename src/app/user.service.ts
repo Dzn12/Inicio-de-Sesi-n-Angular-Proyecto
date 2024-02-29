@@ -13,8 +13,7 @@ export class UserService {
   private apiUrl = 'http://10.118.2.216:8000';
 //private apiUrl = 'http://127.0.0.1:8000';
 
-  private token: string = '';  // Variable para almacenar el token
-
+private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +28,18 @@ export class UserService {
       catchError(this.handleError<any>('loginUser'))
     );
   }
-  
+
+  // Método para guardar el token en el localStorage
+  saveToken(token: string): void {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  // Método para obtener el token del localStorage
+  getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
+  }
+
+
   updateUser(userId: number, usuario: User): Observable<any> {
     return this.http.put(`${this.apiUrl}/api/usuario/editar/${userId}`, usuario).pipe(
       catchError(this.handleError<any>('updateUser'))

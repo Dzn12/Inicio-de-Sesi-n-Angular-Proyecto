@@ -1,0 +1,355 @@
+
+.containerone {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.imagen {
+  margin-left: 150px;
+  margin-right: 20px;
+}
+
+.imagen img {
+  max-width: 200px; /* Ajustar el tamaño de la imagen según sea necesario */
+  height: auto;
+  margin-left: 150px;
+}
+
+.dropdown {
+  margin-right: 40px;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown a:hover {
+  background-color: #f2f2f2;
+  color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+    margin-right: 60px;
+    padding: 12px; /* Aumentar el relleno para un aspecto más equilibrado */
+    border: 2px solid #ccd8e5; /* Aumentar el grosor del borde y cambiar el color a azul */
+    border-radius: 20px; /* Aumentar el radio de la esquina para una apariencia más redondeada */
+    margin-right: 20px; /* Reducir el margen derecho para una alineación más ajustada */
+    width: 200px; /* Ajustar el ancho según sea necesario */
+    font-family: 'Poppins', sans-serif; /* Añadir una fuente personalizada */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s ease-in-out; /* Transición suave al cambiar el color del borde */
+  }
+  .search input:focus {
+    border-color: #0056b3; /* Cambiar el color del borde cuando el campo de búsqueda está enfocado */
+    outline: none; /* Eliminar el contorno predeterminado */
+  }
+
+.sign-in button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-left: 30px;
+}
+
+.sign-in button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px; /* Posiciona el menú desplegable debajo del elemento padre */
+    background-color: #ffffff; /* Color de fondo */
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1;
+    border-radius: 8px;
+  }
+  
+  /* Estilos de los enlaces del menú */
+  .dropdown-content a {
+    color: #333; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interior */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  /* Cambiar color de fondo al pasar el ratón sobre los enlaces */
+  .dropdown-content a:hover {
+    background-color: #f5f5f5; /* Color de fondo al pasar el ratón */
+  }
+  
+  /* Mostrar el menú desplegable cuando se pasa el ratón sobre el elemento padre */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+/* Estilos para los submenús */
+.dropdown-content .submenu {
+    position: relative;
+  }
+  
+  .dropdown-content .submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+  }
+  
+  .dropdown-content .submenu:hover .submenu-content {
+    display: block;
+  }
+  
+
+  .submenu-content1 {
+    display: none;
+    position: absolute;
+    top: 0;
+   /* Posiciona el menú a la derecha del elemento padre */
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+
+  /* Estilos personalizados para hr */
+hr {
+    border: none; /* Elimina el borde predeterminado */
+    height: 0.5px; /* Grosor de la línea */
+    background-color: rgb(218, 217, 217); /* Color de la línea */
+    margin-top: 10px;
+  }
+  
+
+
+h3{
+    margin-top: 30px;
+    margin-left: 685px;
+}
+   
+
+
+
+
+
+
+.principal{
+  width: 95%;
+}
+
+.title1 {
+  width: 100%;
+  margin-left: 265px;
+  margin-bottom: 20px; /* Agrega espacio inferior para la primera sección */
+}
+
+.title2 {
+  width: 100%;
+margin-left: 10px;
+}
+
+
+
+
+
+
+.wrapper {
+  margin-top: -15px;
+  display: flex;
+  justify-content: space-between; /* Distribuir los elementos horizontalmente */
+}
+
+.custom-slide-container {
+  flex: 1; /* El carrusel tomará la mitad del espacio disponible */
+  margin-right: 10px; /* Añade un poco de espacio entre los contenedores */
+}
+
+.container-10 {
+  flex: 1; /* El contenedor 10 tomará la otra mitad del espacio disponible */
+  margin-left: 10px; /* Añade un poco de espacio entre los contenedores */
+}
+
+.custom-carousel {
+  margin-top: 30px;
+  width: 59%; /* Ancho del carrusel */
+  margin-left: 260px;
+}
+
+.custom-slide {
+  border-radius: 10px; /* Borde redondeado para cada diapositiva */
+}
+
+.custom-slide-image {
+  width: 100%; /* Ancho al 100% del contenedor */
+  height: auto; /* Altura ajustada automáticamente */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.custom-link {
+  color: black; /* Cambia el color del texto a negro */
+  text-decoration: none; /* Quita el subrayado */
+}
+
+.inner-container {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+
+.webnovel-text {
+  flex: 1; /* El texto ocupará todo el espacio disponible */
+  margin-right: 30px;
+}
+
+.webnovel-image {
+  border-radius: 8px;
+  max-width: 150px; /* Define un ancho máximo para la imagen */
+  height: auto; /* La altura se ajustará automáticamente */
+  margin-right: 223px; /* Añade un margen a la izquierda para separar la imagen del texto */
+}
+
+.webnovel-text {
+  height: 75px;
+  width: 374px;
+}
+
+
+.webnovel-item{
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  max-width: 70%;
+  margin-left: 260px;
+  padding: 20px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease; /* Efecto de transición al cambiar de slide */
+}
+
+.slide {
+  flex: 0 0 33.33%; /* Para que cada imagen ocupe un tercio del ancho */
+  padding: 0 10px;
+}
+
+.carousel-image {
+  width: 280px;
+  height: auto;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+
+
+
+
+.title3{
+  margin-left: 265px;
+}
