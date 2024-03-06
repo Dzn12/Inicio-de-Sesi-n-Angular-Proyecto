@@ -1,0 +1,137 @@
+/* Estilos generales */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: url('/assets/login1.png') no-repeat center center fixed;
+  background-size: cover;
+  -webkit-backdrop-filter: blur(5px); /* Para Safari */
+  backdrop-filter: blur(5px); /* Para otros navegadores modernos */
+}
+
+/* Contenedor principal que centra todo */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(70, 197, 247, 0.5);
+  border: 1px solid #2a2a2a;
+  color: #ddd;
+  width: 300px;
+  margin-bottom: 20px; /* Añadido margen inferior */
+}
+
+/* Título del formulario */
+h2 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* Estilo de las etiquetas */
+label {
+  color: #bbb;
+  display: block;
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Estilo de los campos de entrada */
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background: #222;
+  color: #ddd;
+  transition: border-color 0.3s;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+  border-color: #555;
+}
+
+/* Estilo del botón de inicio de sesión */
+button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #0d6efd;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: #0a58ca;
+}
+
+/* Estilos para el contenedor de registro */
+.register-container {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(70, 197, 247, 0.5);
+  margin: 20px auto; /* Espacio arriba y abajo, centrado horizontalmente */
+  text-align: center;
+}
+
+.register-prompt {
+  color: #ffffff; /* Texto blanco */
+}
+
+.register-prompt a {
+  color: #1c86ff;
+  text-decoration: none;
+  font-weight: bold;
+} 
+
+.register-prompt a:hover {
+  text-decoration: underline;
+}
+.social-login-text {
+  color: #ffffff; /* Cambia el color a blanco */
+}
+
+/* Estilos para las imágenes dentro de los botones */
+#google-login-btn img, #facebook-login-btn img {
+  max-width: 30px; /* Establece un ancho máximo para los íconos */
+  height: auto; /* Mantiene la proporción de los íconos */
+  display: inline; /* Asegura que la imagen se muestre en línea con el texto */
+  margin-right: 20px;
+}
+
+/* Estilos para los botones de inicio de sesión social */
+#google-login-btn, #facebook-login-btn {
+  display: inline-flex; /* Utiliza flexbox para alinear el texto y los íconos */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  background: rgba(255, 255, 255, 0.1); /* Fondo ligeramente transparente */
+  color: #fff; /* Texto en blanco para alta legibilidad */
+  padding: 10px 20px; /* Espacio interno suficiente para que luzca bien */
+  border-radius: 4px; /* Bordes redondeados suaves */
+  border: none; /* Sin bordes */
+  margin: 5px; /* Margen pequeño para separar los botones entre sí */
+  font-size: 16px; /* Tamaño de fuente legible */
+  cursor: pointer; /* Cursor de mano al pasar sobre los botones */
+}

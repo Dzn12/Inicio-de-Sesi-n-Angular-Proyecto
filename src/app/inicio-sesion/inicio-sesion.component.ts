@@ -22,7 +22,8 @@ export class InicioSesionComponent {
   loginUser() {
     this.userService.loginUser(this.usuario).pipe(
       tap((respuesta: any) => {
-        console.log('Inicio de sesión exitoso:', respuesta);
+        console.log(this.usuario);
+        console.log('Inicio de sesión exitoso Angular:', respuesta);
 
         // Verifica si la respuesta indica un inicio de sesión exitoso (ajusta según tu API)
         if (respuesta && respuesta.token != null ) {
