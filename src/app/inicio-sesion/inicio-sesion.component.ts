@@ -26,9 +26,12 @@ export class InicioSesionComponent {
         console.log('Inicio de sesión exitoso Angular:', respuesta);
 
         // Verifica si la respuesta indica un inicio de sesión exitoso (ajusta según tu API)
-        if (respuesta && respuesta.message === 'Inicio de sesión exitoso.') {
+        if (respuesta && respuesta.token != null ) {
           this.inicioSesionExitoso = true;
           this.isLoggedIn = true;
+
+          // Almacena el token en el localStorage
+          this.userService.saveToken(respuesta.token);
 
           // Almacena el ID en el localStorage
           localStorage.setItem('userId', respuesta.id);

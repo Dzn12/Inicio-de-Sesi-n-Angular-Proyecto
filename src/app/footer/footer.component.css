@@ -1,0 +1,64 @@
+
+
+
+footer {
+    background-color: #333;
+    padding: 20px 0; /* Ajusta el relleno superior e inferior */
+    color: #fff; /* Color del texto */
+    margin-top: 30px;
+  }
+  
+  .container100 {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    padding: 0 15px; /* Añadir relleno a los lados del contenedor */
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
+  
+  .col-md-4 {
+    flex: 1; /* Cada columna ocupa un tercio del ancho del contenedor */
+  }
+  
+  .footer-logo {
+    margin-left: 180px;
+    max-width: 150px;
+    filter: brightness(0) invert(1); 
+    margin-top: -5px;
+  }
+  
+  .footer-links {
+    margin-top: 15px;
+    list-style: none; /* Elimina los marcadores de lista */
+    padding: 0; /* Elimina el relleno de la lista */
+  }
+  
+  .footer-links li {
+    display: inline; /* Muestra los elementos de la lista en línea */
+    margin-right: 20px; /* Añade espacio entre los elementos */
+  }
+  
+  .footer-links a {
+    font-weight: bold;
+    color: #fff; /* Color del texto del enlace */
+    text-decoration: none; /* Quita el subrayado del enlace */
+  }
+  
+  .footer-links a:hover {
+    color: #2389f7; /* Cambia el color del texto al pasar el ratón sobre el enlace */
+  }
+  
+  .footer-text {
+    font-size: 16px;
+    margin-top: 10px; /* Añade espacio superior al texto del pie de página */
+  }
+  .list-inline.footer-links li {
+    margin-right: 102px; /* Ajusta el valor según sea necesario para la separación deseada */
+  }
+  .list-inline.footer-links  {
+    margin-left: 24px; /* Ajusta el valor según sea necesario para la separación deseada */
+  }
