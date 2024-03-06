@@ -140,6 +140,7 @@
 
 
 
+
 <hr class="hr-1">
 
 <div class="title3">
@@ -148,11 +149,14 @@
 
 
 
-<!--
+
+
+
+
 <div class="container">
   <div class="carousel">
     <div class="slides" [style.transform]="'translateX(-' + currentSlide * (330 / slidesa.length) + '%)'"
-         (mousedown)="onMouseDown($event)">
+         (mousedown)="onMouseDown($event)" (window:mousemove)="onMouseMoveWindow($event)" (window:mouseup)="onMouseUpWindow()">
       <div class="slide" *ngFor="let slide of slidesa; let i = index;">
         <img [src]="slide.image" alt="Slide Image" class="carousel-image">
       </div>
@@ -162,10 +166,79 @@
     </div>
   </div>
 </div>
--->
 
 
 
+
+<hr class="hr-10">
+<div class="title3">
+  <h4>Books and Novels</h4>
+</div>
+
+
+<div class="conimage">
+  <div class="conimagetop">
+    <img src="../../assets/1 (1).jpg" alt="1" class="unomage">
+    <img src="../../assets/2 (1).jpg" alt="2" class="dosmage">
+    <img src="../../assets/3 (1).jpg" alt="3" class="tresmage">
+    <img src="../../assets/4 (1).jpg" alt="4" class="cuatromage">
+  </div>
+</div>
+
+
+<div class="conimage">
+  <div class="conimagetop1">
+    <img src="../../assets/1 (1).jpg" alt="1" class="unomage">
+    <img src="../../assets/2 (1).jpg" alt="2" class="dosmage">
+    <img src="../../assets/3 (1).jpg" alt="3" class="tresmage">
+    <img src="../../assets/4 (1).jpg" alt="4" class="cuatromage">
+  </div>
+</div>
+
+
+<div class="conimage">
+  <div class="conimagetop2">
+    <img src="../../assets/1 (1).jpg" alt="1" class="unomage">
+    <img src="../../assets/2 (1).jpg" alt="2" class="dosmage">
+    <img src="../../assets/3 (1).jpg" alt="3" class="tresmage">
+    <img src="../../assets/4 (1).jpg" alt="4" class="cuatromage">
+  </div>
+</div>
+
+
+<div class="conimage">
+  <div class="conimagetop3">
+    <img src="../../assets/1 (1).jpg" alt="1" class="unomage">
+    <img src="../../assets/2 (1).jpg" alt="2" class="dosmage">
+    <img src="../../assets/3 (1).jpg" alt="3" class="tresmage">
+    <img src="../../assets/4 (1).jpg" alt="4" class="cuatromage">
+  </div>
+</div>
+
+
+
+
+
+
+
+<footer>
+  <div class="container100">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="../../assets/novel.png" alt="Pie de página" class="footer-logo">
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <p class="footer-text">© 2023 Novelproject</p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
 
