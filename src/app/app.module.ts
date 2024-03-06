@@ -9,10 +9,15 @@ import { AppComponent } from './app.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { BienvenidoComponent } from './bienvenido/bienvenido.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { UpdateComponent } from './update/update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap'; // Agrega NgbCarouselModule aquí
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { BookDescriptionComponent } from './book-description/book-description.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     RegistroComponent,
     InicioSesionComponent,
     BienvenidoComponent,
-    UpdateComponent
+    UpdateComponent,
+    DashboardComponent,
+    FooterComponent,
+    BookDescriptionComponent,
+    HeaderComponent
   ],
   imports: [
     AccordionModule.forRoot(),
