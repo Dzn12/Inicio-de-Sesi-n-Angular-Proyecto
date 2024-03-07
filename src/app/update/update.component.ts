@@ -24,7 +24,7 @@ export class UpdateComponent implements OnInit {
   ngOnInit() {
     // Obtener el userId desde otra fuente (por ejemplo, localStorage)
     const userIdString = localStorage.getItem('userId');
-    
+    console.log(userIdString)
     if (userIdString !== null) {
       this.userId = parseInt(userIdString, 10);
     } else {
