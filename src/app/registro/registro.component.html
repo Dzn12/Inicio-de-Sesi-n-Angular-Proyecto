@@ -1,17 +1,48 @@
-<div>
-    <h2>Registro de Usuario</h2>
-    <form (ngSubmit)="registerUser()">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" required>
-  
-      <label for="correo">Correo:</label>
-      <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" required>
-  
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="usuario.password" required>
-  
-      <button type="submit">Registrarse</button>
+<div class="registro-container">
+  <div class="form-image"></div>
+  <!-- Imagen -->
+  <div class="form-container">
+    <!-- Contenedor del formulario -->
+    <img src="assets/nvlproject.png" alt="Logo">
+    <h3>Registro de usuario</h3>
+    <form (ngSubmit)="registerUser()" class="form-group">
+      <label for="nombre" class="form-overlay">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="usuario.nombre"
+        required
+      />
+      <br />
+      <label for="correo" class="form-overlay">Correo:</label>
+      <input
+        type="email"
+        id="correo"
+        name="correo"
+        [(ngModel)]="usuario.correo"
+        required
+      />
+      <br />
+      <label for="password" class="form-overlay">Contraseña:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="usuario.password"
+        required
+      />
+      <br />
+      <label for="password" class="form-overlay">Confirma tu contraseña:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="usuario.password"
+        required
+      />
+      <br />
+      <button type="submit" class="form-overlay">Registrarse</button>
     </form>
   </div>
-  
-  
+</div>
