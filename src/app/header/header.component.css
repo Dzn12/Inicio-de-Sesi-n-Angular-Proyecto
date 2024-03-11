@@ -1,0 +1,210 @@
+
+.containerone {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  
+  
+  .left-section {
+  display: flex;
+  align-items: center;
+  }
+  
+  .imagen {
+  margin-left: 150px;
+  margin-right: 20px;
+  }
+  
+  .imagen img {
+  max-width: 200px; /* Ajustar el tamaño de la imagen según sea necesario */
+  height: auto;
+  margin-left: 150px;
+  }
+  
+  .dropdown {
+  margin-right: 40px;
+  }
+  
+  .dropdown a {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out;
+  }
+  
+  .dropdown a:hover {
+  background-color: #f2f2f2;
+  color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .right-section {
+  display: flex;
+  align-items: center;
+  }
+  
+  .search input {
+    margin-right: 60px;
+    padding: 12px; /* Aumentar el relleno para un aspecto más equilibrado */
+    border: 2px solid #ccd8e5; /* Aumentar el grosor del borde y cambiar el color a azul */
+    border-radius: 20px; /* Aumentar el radio de la esquina para una apariencia más redondeada */
+    margin-right: 20px; /* Reducir el margen derecho para una alineación más ajustada */
+    width: 200px; /* Ajustar el ancho según sea necesario */
+    font-family: 'Poppins', sans-serif; /* Añadir una fuente personalizada */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s ease-in-out; /* Transición suave al cambiar el color del borde */
+  }
+  .search input:focus {
+    border-color: #0056b3; /* Cambiar el color del borde cuando el campo de búsqueda está enfocado */
+    outline: none; /* Eliminar el contorno predeterminado */
+  }
+  
+  .sign-in button {
+  padding: 10px 20px;
+  background-color: #fefefe;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-left: 30px;
+  }
+  
+  .sign-in button:hover {
+  background-color: #ced3d8;
+  }
+  
+  
+  /* Menú desplegable */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 35px; /* Posiciona el menú desplegable debajo del elemento padre */
+    background-color: #ffffff; /* Color de fondo */
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 1;
+    border-radius: 8px;
+  }
+  
+  /* Estilos de los enlaces del menú */
+  .dropdown-content a {
+    color: #333; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interior */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  /* Cambiar color de fondo al pasar el ratón sobre los enlaces */
+  .dropdown-content a:hover {
+    background-color: #f5f5f5; /* Color de fondo al pasar el ratón */
+  }
+  
+  /* Mostrar el menú desplegable cuando se pasa el ratón sobre el elemento padre */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  /* Estilos para los submenús */
+  .dropdown-content .submenu {
+    position: relative;
+  }
+  
+  .dropdown-content .submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+  }
+  
+  .dropdown-content .submenu:hover .submenu-content {
+    display: block;
+  }
+  
+  
+  .submenu-content1 {
+    display: none;
+    position: absolute;
+    top: 0;
+   /* Posiciona el menú a la derecha del elemento padre */
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+  
+  
+  /* Estilos personalizados para hr */
+  hr {
+    border: none; /* Elimina el borde predeterminado */
+    height: 1.8px; /* Grosor de la línea */
+    background-color: rgb(218, 217, 217); /* Color de la línea */
+    margin-top: 10px;
+  }
+  
+  
+  
+  h3{
+    margin-top: 30px;
+    margin-left: 685px;
+  }
+   
+  
+  .hr-10 {
+    border: none; /* Elimina el borde predeterminado */
+    height: 1.8px; /* Grosor de la línea */
+    background-color: rgb(218, 217, 217); /* Color de la línea */
+    margin-top: -5px;
+  }
+  
+  
+  
+
+
+.avatar-btn {
+    background-color: transparent; /* Hace que el botón sea transparente */
+    border: none; /* Elimina el borde del botón */
+    padding: 0; /* Elimina el relleno del botón */
+  }
+  
+  .avatar-img {
+    width: 35px; /* Ajusta el ancho de la imagen */
+    height: 35px; /* Ajusta la altura de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+  }
+  

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { User } from './usuer.model'; // Asegúrate de ajustar la ruta correctamente
+import { Capitulo } from './capitulo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,7 @@ export class UserService {
   private apiUrl = 'http://10.118.2.216:8000';
 //private apiUrl = 'http://127.0.0.1:8000';
 
-  private token: string = '';  // Variable para almacenar el token
-
+private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
 
   constructor(private http: HttpClient) { }
 
@@ -29,7 +29,18 @@ export class UserService {
       catchError(this.handleError<any>('loginUser'))
     );
   }
-  
+
+  // Método para guardar el token en el localStorage
+  saveToken(token: string): void {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  // Método para obtener el token del localStorage
+  getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
+  }
+
+
   updateUser(userId: number, usuario: User): Observable<any> {
     return this.http.put(`${this.apiUrl}/api/usuario/editar/${userId}`, usuario).pipe(
       catchError(this.handleError<any>('updateUser'))
@@ -42,7 +53,12 @@ export class UserService {
     );
   }
 
-  
+  getCapitulo(id: number): Observable<Capitulo> {
+    return this.http.get<Capitulo>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
+      catchError(this.handleError<Capitulo>('getCapitulo'))
+    );
+  }
+
   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

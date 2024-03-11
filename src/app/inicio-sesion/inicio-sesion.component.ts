@@ -22,17 +22,21 @@ export class InicioSesionComponent {
   loginUser() {
     this.userService.loginUser(this.usuario).pipe(
       tap((respuesta: any) => {
-        console.log('Inicio de sesión exitoso:', respuesta);
+        console.log(this.usuario);
+        console.log('Inicio de sesión exitoso Angular:', respuesta);
 
         // Verifica si la respuesta indica un inicio de sesión exitoso (ajusta según tu API)
-        if (respuesta && respuesta.message === 'Inicio de sesión exitoso.') {
+        if (respuesta && respuesta.token != null ) {
           this.inicioSesionExitoso = true;
           this.isLoggedIn = true;
+
+          // Almacena el token en el localStorage
+          this.userService.saveToken(respuesta.token);
 
           // Almacena el ID en el localStorage
           localStorage.setItem('userId', respuesta.id);
 
-          this.router.navigate(['/bienvenido']);
+          this.router.navigate(['/dashboard']);
         } else {
           // Puedes manejar otras respuestas exitosas aquí si es necesario
           this.errorMessage = 'Error en el inicio de sesión: Inicio de sesión no exitoso.';

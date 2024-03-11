@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-bienvenido',
-  templateUrl: './bienvenido.component.html',
-  styleUrls: ['./bienvenido.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls : ['./dashboard.component.css']
 })
+export class DashboardComponent implements OnInit {
 
-export class BienvenidoComponent implements OnInit {
+  avatarIcon = '../../../assets/Henry.jpg';
+
   slides = [
     {
       image: '../../../assets/Henry.jpg',

@@ -1,0 +1,93 @@
+
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="book-details">
+      <img src="../../assets/1 (1).jpg" alt="Book Cover" class="book-cover">
+      <div class="book-info">
+        <h2 class="book-title">The World Under The Mountain </h2>
+        <p class="book-introduction">
+            A young man named Alex, who immerses himself in the virtual world of the game for the first time.
+             With a feeling of excitement and nervousness, Alex finds himself in a digitally created landscape, 
+             marveling at the immensity and beauty of the world around him. Soon, he encounters other players and
+              begins his journey in this new universe full of mystery and adventure. As he explores his surroundings, 
+              he faces the game's initial challenges and begins to discover the unique rules and dynamics of this 
+              virtual world.
+        </p>
+        
+        <div class="genres-container">
+            <div class="genres-box">
+              <h5>Genres:</h5>
+              <ul>
+                <li class="genre fantasy">Fantasy</li>
+                <li class="genre adventure">Adventure</li>
+                <li class="genre science-fiction">Science Fiction</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div> 
+  </div>
+
+
+  <div ngbAccordion class="custom-accordion">
+    <div ngbAccordionItem [collapsed]="false" class="accordion-item">
+      <h2 ngbAccordionHeader class="accordion-header">
+        <button ngbAccordionButton class="accordion-button">Volume 1</button>
+      </h2>
+      <div ngbAccordionCollapse class="accordion-collapse">
+        <div ngbAccordionBody>
+          <ng-template>
+            <div>
+              <a href="#" class="chapter-link">Chapther 1-
+              <p class="chapter-title">El Amanecer del Camino</p></a><hr>
+            </div>
+            <div>
+              <a href="#" class="chapter-link">Chapther 2-
+              <p class="chapter-title">El Ultimo Soldado del Reino</p></a><hr>
+            </div>
+            <div>
+              <a href="#" class="chapter-link">Chapther 3-
+              <p class="chapter-title">La marea Alta</p></a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  
+
+   <!--  <div ngbAccordionItem>
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton>Two</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody>
+          <ng-template>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+            moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+            butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+            haven't heard of them accusamus labore sustainable VHS.
+          </ng-template>
+        </div>
+      </div>
+    </div>-->
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <button class="save-button">Save Book</button>-->
+
+  <app-footer></app-footer>
