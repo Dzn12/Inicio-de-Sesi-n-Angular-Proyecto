@@ -36,7 +36,7 @@ export class InicioSesionComponent {
           // Almacena el ID en el localStorage
           localStorage.setItem('userId', respuesta.id);
 
-          this.router.navigate(['/bienvenido']);
+          this.router.navigate(['/dashboard']);
         } else {
           // Puedes manejar otras respuestas exitosas aquí si es necesario
           this.errorMessage = 'Error en el inicio de sesión: Inicio de sesión no exitoso.';

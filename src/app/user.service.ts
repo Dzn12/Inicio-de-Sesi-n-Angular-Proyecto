@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { User } from './usuer.model'; // Asegúrate de ajustar la ruta correctamente
+import { Capitulo } from './capitulo.model';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +53,12 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
     );
   }
 
-  
+  getCapitulo(id: number): Observable<Capitulo> {
+    return this.http.get<Capitulo>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
+      catchError(this.handleError<Capitulo>('getCapitulo'))
+    );
+  }
+
   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

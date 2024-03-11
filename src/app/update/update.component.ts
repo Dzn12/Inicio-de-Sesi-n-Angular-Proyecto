@@ -1,5 +1,5 @@
 // update.component.ts
-
+import { jwtDecode } from 'jwt-decode';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../usuer.model';
 import { UserService } from '../user.service';
@@ -23,10 +23,13 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     // Obtener el userId desde otra fuente (por ejemplo, localStorage)
-    const userIdString = localStorage.getItem('userId');
-    
+    const userIdString = localStorage.getItem('authToken');
+  
     if (userIdString !== null) {
-      this.userId = parseInt(userIdString, 10);
+      
+      const decodedToken: any = jwtDecode(userIdString);
+      console.log(decodedToken)
+      this.userId = decodedToken.username
     } else {
       // Manejar el caso en que 'userId' no está presente en localStorage
       console.error('No se encontró el userId en localStorage.');
@@ -36,6 +39,7 @@ export class UpdateComponent implements OnInit {
   updateUser() {
     // Verificar si el usuario está autenticado antes de intentar la actualización
     if (this.userId !== null) {
+      
       this.userService.updateUser(this.userId, this.usuario).subscribe(
         (respuesta: any) => {
           console.log('Actualización de datos exitosa:', respuesta);
