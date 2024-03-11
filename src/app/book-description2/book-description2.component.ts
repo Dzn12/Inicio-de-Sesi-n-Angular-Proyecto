@@ -11,6 +11,10 @@ export class BookDescription2Component {
 		// customize default values of accordions used by this component tree
 		config.closeOthers = true;
 }
+showFull: boolean = false;
 
+toggleShow() {
+  this.showFull = !this.showFull;
+}
 }
 

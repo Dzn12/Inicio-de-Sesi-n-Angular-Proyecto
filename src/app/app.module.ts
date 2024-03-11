@@ -18,6 +18,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookDescriptionComponent } from './book-description/book-description.component';
 import { BookDescription2Component } from './book-description2/book-description2.component';
+import { BookDescription3Component } from './book-description3/book-description3.component';
+import { BookDescription4Component } from './book-description4/book-description4.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { BookDescription2Component } from './book-description2/book-description2
     FooterComponent,
     BookDescriptionComponent,
     BookDescription2Component,
+    BookDescription3Component,
+    BookDescription4Component,
     HeaderComponent
   ],
   imports: [
