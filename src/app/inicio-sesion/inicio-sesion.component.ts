@@ -39,7 +39,7 @@ export class InicioSesionComponent {
           this.router.navigate(['/dashboard']);
         } else {
           // Puedes manejar otras respuestas exitosas aquí si es necesario
-          this.errorMessage = 'Error en el inicio de sesión: Inicio de sesión no exitoso.';
+          this.errorMessage = 'El correo electronico o contraseña no son correctos.';
           console.error(this.errorMessage);
         }
         // Manejar la respuesta del inicio de sesión

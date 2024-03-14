@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -12,7 +12,7 @@ import { Capitulo } from './capitulo.model';
 })
 export class UserService {
   private apiUrl = 'http://10.118.2.216:8000';
-//private apiUrl = 'http://127.0.0.1:8000';
+  //private apiUrl = 'http://127.0.0.1:8000';
 
 private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
 
@@ -40,12 +40,41 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
     return localStorage.getItem(this.tokenKey);
   }
 
-
-  updateUser(userId: number, usuario: User): Observable<any> {
-    return this.http.put(`${this.apiUrl}/api/usuario/editar/${userId}`, usuario).pipe(
-      catchError(this.handleError<any>('updateUser'))
+  getUser(userId: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/api/usuario/${userId}`).pipe(
+      catchError(this.handleError<User>('getUser'))
     );
   }
+  
+  
+  //updateUser(email:string ,userId: string, pswd: string): Observable<any> {
+   // console.log("Hola que tal",userId);
+
+   // const params = new HttpParams()
+   // .set('name', userId)
+   // .set('pswd', pswd);
+
+
+   // return this.http.put(`${this.apiUrl}/api/usuario/editar/${email}`, {params}).pipe(
+   //   catchError(this.handleError<any>('updateUser'))
+   // );
+ // }
+
+
+ updateUser(email: string, name: string, pswd: string): Observable<any> {
+  const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
+ 
+  return this.http.put(`${this.apiUrl}/api/usuario/editar/${email}`, body).pipe(
+    catchError(this.handleError<any>('updateUser'))
+  );
+}
+
+
+
+
+
+
+ 
   
   deleteUser(userId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
