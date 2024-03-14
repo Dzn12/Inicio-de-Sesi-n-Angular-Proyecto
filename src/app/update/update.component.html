@@ -10,10 +10,10 @@
       <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" required>
   
       <label for="correo">Correo:</label>
-      <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" required>
+      <input type="email" readonly disabled id="correo" name="correo" [(ngModel)]="userId" required>
   
       <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="usuario.password" required>
+      <input type="password" id="password" name="password" [(ngModel)]="pswd" required>
   
       <button type="submit">Actualizar Usuario</button>
     </form>

@@ -14,8 +14,9 @@ export class UpdateComponent implements OnInit {
 
   usuario: User = new User();
   isLoggedIn: boolean = false;
-  userId: number | null = null;
-
+  userId: string | null = null;
+  pswd: string | null = null;
+  nombre:string ="";
   constructor(
     private userService: UserService,
     private router: Router
@@ -29,7 +30,9 @@ export class UpdateComponent implements OnInit {
       
       const decodedToken: any = jwtDecode(userIdString);
       console.log(decodedToken)
-      this.userId = decodedToken.username
+      this.nombre = this.usuario.nombre;
+      this.userId = decodedToken.username;
+      this.pswd = decodedToken.pswd;
     } else {
       // Manejar el caso en que 'userId' no está presente en localStorage
       console.error('No se encontró el userId en localStorage.');
@@ -38,9 +41,9 @@ export class UpdateComponent implements OnInit {
 
   updateUser() {
     // Verificar si el usuario está autenticado antes de intentar la actualización
-    if (this.userId !== null) {
+    if (this.userId !== null && this.pswd !== null) {
       
-      this.userService.updateUser(this.userId, this.usuario).subscribe(
+      this.userService.updateUser(this.userId,this.usuario.nombre, this.pswd).subscribe(
         (respuesta: any) => {
           console.log('Actualización de datos exitosa:', respuesta);
           // Manejar la respuesta exitosa de la actualización

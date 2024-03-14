@@ -4,7 +4,8 @@
     <header>
       <div class="left-section">
         <div class="imagen">
-          <img src="../../assets/novel.png" alt="Mi sitio web">
+          <a [routerLink]="'/dashboard'">
+          <img src="../../assets/novel.png" alt="Mi sitio web" ></a>
         </div>
         <div class="dropdown">
           <a href="#">Browse</a>
@@ -60,7 +61,7 @@
           <input type="text" placeholder="Search">
         </div>
         <div class="sign-in">
-          <button id="avatar-btn" aria-haspopup="true" class="avatar-btn" aria-label="Menú de la cuenta" [routerLink]="'/registro'">
+          <button id="avatar-btn" aria-haspopup="true" class="avatar-btn" aria-label="Menú de la cuenta" [routerLink]="'/update'">
             <img id="avatar-img" draggable="false" class="avatar-img" alt="Icono de perfil" [src]="avatarIcon">
           </button>
           
