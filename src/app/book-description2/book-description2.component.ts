@@ -12,9 +12,14 @@ export class BookDescription2Component {
 		config.closeOthers = true;
 }
 showFull: boolean = false;
+saved: boolean = false; // Agregar una variable para indicar si el libro está guardado
+
 
 toggleShow() {
   this.showFull = !this.showFull;
+}
+saveBook() {
+  this.saved = true; // Marcar el libro como guardado
 }
 }
 

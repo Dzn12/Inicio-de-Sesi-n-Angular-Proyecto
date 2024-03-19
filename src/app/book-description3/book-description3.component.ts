@@ -7,16 +7,22 @@ import { NgbAccordionConfig, NgbAccordionModule } from '@ng-bootstrap/ng-bootstr
   styleUrls: ['./book-description3.component.css']
 })
 export class BookDescription3Component {
-  
+
     constructor(config: NgbAccordionConfig) {
       // customize default values of accordions used by this component tree
       config.closeOthers = true;
   }
   showFull: boolean = false;
+  saved: boolean = false;
 
   toggleShow() {
     this.showFull = !this.showFull;
   }
+
+saveBook() {
+  this.saved = true; // Marcar el libro como guardado
+}
+
 }
 
 

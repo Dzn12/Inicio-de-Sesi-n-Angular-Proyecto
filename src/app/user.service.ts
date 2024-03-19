@@ -11,9 +11,9 @@ import { Capitulo } from './capitulo.model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://10.118.2.216:8000';
+  //private apiUrl = 'http://10.118.2.216:8000';
   //private apiUrl = 'http://127.0.0.1:8000';
-
+  private apiUrl ="";
 private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
 
   constructor(private http: HttpClient) { }
@@ -21,7 +21,7 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
   registerUser(usuario: User): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/usuario/registro`, usuario).pipe(
       catchError(this.handleError<any>('registerUser'))
-    );  
+    );
   }
 
   loginUser(usuario: User): Observable<any> {
@@ -45,8 +45,8 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
       catchError(this.handleError<User>('getUser'))
     );
   }
-  
-  
+
+
   //updateUser(email:string ,userId: string, pswd: string): Observable<any> {
    // console.log("Hola que tal",userId);
 
@@ -63,7 +63,7 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
 
  updateUser(email: string, name: string, pswd: string): Observable<any> {
   const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
- 
+
   return this.http.put(`${this.apiUrl}/api/usuario/editar/${email}`, body).pipe(
     catchError(this.handleError<any>('updateUser'))
   );
@@ -74,8 +74,8 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
 
 
 
- 
-  
+
+
   deleteUser(userId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
       catchError(this.handleError<any>('deleteUser'))
@@ -88,7 +88,7 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
     );
   }
 
-  
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);

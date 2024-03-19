@@ -1,100 +1,81 @@
 <app-header></app-header>
 
-
-
-
-
-
 <div class="container">
-    <div class="book-details">
-      <img src="../../assets/3 (1).jpg" alt="Book Cover" class="book-cover">
-      <div class="book-info">
-        <h2 class="book-title">Innovation City: A Portal Cultivation Fantasy Saga</h2>
-        <p class="book-introduction" [ngClass]="{ 'show-full': showFull }" (click)="toggleShow()">
-            Chaos looms over the beloved realm of Zemia. As Darkness and Light confront their greatest challenge,
-             the Chosen – Aiden, Anthony, and Julia – wield newfound powers to combat the encroaching forces. 
-             With a blend of magic, cultivation, and strategic brilliance, the trio must revolutionize armor 
-             designs and unlock ancient enchantments.<strong>....</strong>
-          <span *ngIf="showFull">
-            In a world teetering on the brink, 'Innovation City' unfolds a tale of sacrifice,
-             redemption, and the relentless pursuit of salvation. Will Aiden's barony on the edge 
-             of the Great Western Forest be enough to stem the tide, or will Chaos consume all?
-          </span>
-        </p>
-        
-        
-         
-        <div class="genres-container">
-            <div class="genres-box">
-              <h5>Genres:</h5>
-              <ul class="hola">
-                <li class="genre action">Action</li>
-                <li class="genre fantasy">Comedy</li>
-                <li class="genre adventure">Adventure</li>
-                <li class="genre science-fiction">Slice of Life</li>
-                <li class="genre  Survival">Romance</li>
-                <li class="genre  Survival">Science fiction</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-    </div> 
-  </div>
-
-
-
-
-
-
-
-  <div ngbAccordion class="custom-accordion">
-    <div ngbAccordionItem [collapsed]="false" class="accordion-item">
-      <h2 ngbAccordionHeader class="accordion-header">
-        <button ngbAccordionButton class="accordion-button">Volume 1</button>
+  <div class="book-details">
+    <img src="../../assets/3 (1).jpg" alt="Book Cover" class="book-cover" />
+    <div class="book-info">
+      <h2 class="book-title">
+        Innovation City: A Portal Cultivation Fantasy Saga
       </h2>
-      <div ngbAccordionCollapse class="accordion-collapse">
-        <div ngbAccordionBody>
-          <ng-template>
-            <div>
-              <a href="#" class="chapter-link">Chapther 1-
-              <p class="chapter-title">El Amanecer del Camino</p></a><hr>
-            </div>
-            <div>
-              <a href="#" class="chapter-link">Chapther 2-
-              <p class="chapter-title">El Ultimo Soldado del Reino</p></a><hr>
-            </div>
-            <div>
-              <a href="#" class="chapter-link">Chapther 3-
-              <p class="chapter-title">La marea Alta</p></a>
-            </div>
-          </ng-template>
+      <p
+        class="book-introduction"
+        [ngClass]="{ 'show-full': showFull }"
+        (click)="toggleShow()"
+      >
+        Chaos looms over the beloved realm of Zemia. As Darkness and Light
+        confront their greatest challenge, the Chosen – Aiden, Anthony, and
+        Julia – wield newfound powers to combat the encroaching forces. With a
+        blend of magic, cultivation, and strategic brilliance, the trio must
+        revolutionize armor designs and unlock ancient enchantments.<strong
+          >....</strong
+        >
+        <span *ngIf="showFull">
+          In a world teetering on the brink, 'Innovation City' unfolds a tale of
+          sacrifice, redemption, and the relentless pursuit of salvation. Will
+          Aiden's barony on the edge of the Great Western Forest be enough to
+          stem the tide, or will Chaos consume all?
+        </span>
+      </p>
+
+      <div class="genres-container">
+        <div class="genres-box">
+          <h5>Genres:</h5>
+          <ul class="hola">
+            <li class="genre action">Action</li>
+            <li class="genre fantasy">Comedy</li>
+            <li class="genre adventure">Adventure</li>
+            <li class="genre science-fiction">Slice of Life</li>
+            <li class="genre Survival">Romance</li>
+            <li class="genre Survival">Science fiction</li>
+          </ul>
         </div>
       </div>
+      <button (click)="saveBook()" class="save-button" class="btn btn-primary">Save Book</button>
     </div>
-
+  </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
+<div ngbAccordion class="custom-accordion">
+  <div ngbAccordionItem [collapsed]="false" class="accordion-item">
+    <h2 ngbAccordionHeader class="accordion-header">
+      <button ngbAccordionButton class="accordion-button">Volume 1</button>
+    </h2>
+    <div ngbAccordionCollapse class="accordion-collapse">
+      <div ngbAccordionBody>
+        <ng-template>
+          <div>
+            <a href="#" class="chapter-link"
+              >Chapter 1-
+              <p class="chapter-title">El Amanecer del Camino</p></a
+            >
+            <hr />
+          </div>
+          <div>
+            <a href="#" class="chapter-link"
+              >Chapter 2-
+              <p class="chapter-title">El Ultimo Soldado del Reino</p></a
+            >
+            <hr />
+          </div>
+          <div>
+            <a href="#" class="chapter-link">Chapter 3-
+              <p class="chapter-title">La marea Alta</p></a
+            >
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>
-
-
-
-
-
-
-
-
-
-
-

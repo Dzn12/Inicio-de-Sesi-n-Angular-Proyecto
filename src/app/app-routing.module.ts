@@ -13,20 +13,21 @@ import { BookDescription3Component } from './book-description3/book-description3
 import { BookDescription4Component } from './book-description4/book-description4.component';
 import { CapituloComponent } from './capitulo/capitulo.component';
 import { HeaderComponent } from './header/header.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component'; // Importa el componente PerfilUsuarioComponent
 
 const routes: Routes = [
   { path: '', component: BienvenidoComponent }, // Ruta principal
   { path: 'registro', component: RegistroComponent },
   { path: 'inicio-sesion', component: InicioSesionComponent },
-  { path: 'dashboard', component: DashboardComponent }, 
-  { path: 'bienvenido', component: BienvenidoComponent }, 
-  { path: 'update', component: UpdateComponent }, 
-  { path: 'book-description', component: BookDescriptionComponent }, 
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'bienvenido', component: BienvenidoComponent },
+  { path: 'update', component: UpdateComponent },
+  { path: 'book-description', component: BookDescriptionComponent },
   { path: 'book-description2', component: BookDescription2Component },
   { path: 'book-description3', component: BookDescription3Component },
   { path: 'book-description4', component: BookDescription4Component },
-  { path: 'capitulo', component: CapituloComponent }, 
-  {path : 'header' , component: HeaderComponent}
+  { path: 'capitulo', component: CapituloComponent },
+  {path : 'header' , component: HeaderComponent},  { path: 'perfil-usuario', component: PerfilUsuarioComponent }
 ];
 
 @NgModule({
