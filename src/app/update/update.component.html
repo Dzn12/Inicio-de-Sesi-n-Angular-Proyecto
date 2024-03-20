@@ -3,26 +3,40 @@
 
 
 
-<div>
+<div class="arriba">
     <h2>Actualizar Usuario</h2>
     <form (ngSubmit)="updateUser()">
       <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" required>
-  
+      
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" required pattern="[a-zA-Z\s]*">
+
       <label for="correo">Correo:</label>
       <input type="email" readonly disabled id="correo" name="correo" [(ngModel)]="userId" required>
   
       <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="pswd" required>
+      <input type="password"  id="password" name="password" [(ngModel)]="pswd" required>
   
       <button type="submit">Actualizar Usuario</button>
     </form>
-  </div>
+  
+    <div *ngIf="usuario.nombre && !isNombreValid()" class="error-message">
+      <p>El nombre solo puede contener letras y espacios.</p>
+    </div>
+    
+
+
+    <div *ngIf="updateSuccess" class="success-message">
+      <p>¡El usuario ha sido actualizado exitosamente!</p>
+    </div>
+
+    <div *ngIf="updateError" class="error-message">
+      <p>¡Se produjo un error durante la actualización de datos!</p>
+    </div>
+
+</div>
   
 
-  
-
-<app-footer></app-footer>
-
-
+<div class="bajo">
+  <app-footer></app-footer>
+</div>
 

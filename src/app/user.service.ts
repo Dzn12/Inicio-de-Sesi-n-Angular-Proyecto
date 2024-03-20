@@ -35,6 +35,7 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
     localStorage.setItem(this.tokenKey, token);
   }
 
+
   // Método para obtener el token del localStorage
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
@@ -47,6 +48,8 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
   }
   
   
+
+
   //updateUser(email:string ,userId: string, pswd: string): Observable<any> {
    // console.log("Hola que tal",userId);
 
