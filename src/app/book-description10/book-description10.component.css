@@ -94,18 +94,18 @@
   }
   
   .fantasy {
-    background-color: #6c5ce7;
+    background-color: #8e8ba5;
     color: #fff;
   }
   
   .adventure {
     background-color: #fdcb6e;
-    color: #333;
+    color: #fff;
   }
   
-  .Survival{
-    background-color: #00b894;
-    color: #fff;
+  .genre.Dark {
+    background-image: linear-gradient(to right, #660099, #003366); /* Gradient from purple to blue */
+    color: #fff; /* White text for readability */
   }
   
   .genre:hover {

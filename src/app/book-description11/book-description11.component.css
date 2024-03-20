@@ -93,19 +93,23 @@
     list-style-type: none; 
   }
   
-  .fantasy {
-    background-color: #6c5ce7;
-    color: #fff;
+  .genre.Thriller {
+    background-image: linear-gradient(to right, #F78DA7, #7928CA); /* Pink to purple */
+    color: #fff; /* White text for readability */
   }
-  
   .adventure {
     background-color: #fdcb6e;
     color: #333;
   }
   
-  .Survival{
-    background-color: #00b894;
+  .fantasy{
+    background-color: #8e8ba5;
     color: #fff;
+  }
+  
+  .genre.Drama {
+    background-color: #8d40d6; /* Deep red */
+    color: #fff; /* White text for readability */
   }
   
   .genre:hover {

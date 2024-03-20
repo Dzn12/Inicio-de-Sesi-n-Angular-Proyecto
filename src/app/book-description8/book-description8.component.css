@@ -93,21 +93,26 @@
     list-style-type: none; 
   }
   
-  .fantasy {
-    background-color: #6c5ce7;
-    color: #fff;
+  .genre.Thriller {
+    background-image: linear-gradient(to right, #F78DA7, #7928CA); /* Pink to purple */
+    color: #fff; /* White text for readability */
   }
   
-  .adventure {
-    background-color: #fdcb6e;
-    color: #333;
+  .genre.Espionage {
+    background-image: linear-gradient(to right, #483D8B, #7F528D); /* Navy to dark purple */
+    color: #fff; /* White text for readability */
   }
   
-  .Survival{
-    background-color: #00b894;
-    color: #fff;
+  .genre.Political {
+    background-image: linear-gradient(to right, #9c6722, #663399); /* Orange to purple */
+    color: #fff; /* White text for readability */
   }
   
+
+
+
+
+
   .genre:hover {
     transform: scale(1.05);
   }

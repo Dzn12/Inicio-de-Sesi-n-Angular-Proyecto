@@ -94,17 +94,17 @@
   }
   
   .fantasy {
-    background-color: #6c5ce7;
+    background-color: #8e8ba5;
     color: #fff;
   }
   
   .adventure {
-    background-color: #fdcb6e;
-    color: #333;
+    background-color: #f99625;
+    color: #ffffff;
   }
   
   .Survival{
-    background-color: #00b894;
+    background-color: #65a2ce;
     color: #fff;
   }
   
@@ -140,7 +140,7 @@
   
   .custom-accordion {
     margin-bottom: 80px;
-    margin-top: 120px;
+    margin-top: 97px;
     margin-left: 400px;
     max-width: 700px; /* Ajusta el ancho máximo según sea necesario */
     max-height: 500px; /* Ajusta la altura máxima según sea necesario */
