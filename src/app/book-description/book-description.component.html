@@ -1,25 +1,29 @@
 
 <app-header></app-header>
 
+<div class="fondo">
 
-<div class="container">
-    <div class="book-details">
-      <img src="../../assets/1 (1).jpg" alt="Book Cover" class="book-cover">
-      <div class="book-info">
-        <h2 class="book-title">The World Under The Mountain </h2>
-        <p class="book-introduction">
-            A young man named Alex, who immerses himself in the virtual world of the game for the first time.
-             With a feeling of excitement and nervousness, Alex finds himself in a digitally created landscape,
-             marveling at the immensity and beauty of the world around him. Soon, he encounters other players and
-              begins his journey in this new universe full of mystery and adventure. As he explores his surroundings,
-              he faces the game's initial challenges and begins to discover the unique rules and dynamics of this
-              virtual world.
-        </p>
+<div class="container" *ngIf="obra">
+  <div class="book-details">
+    <img src="../../assets/1 (1).jpg" alt="Book Cover" class="book-cover">
+    <div class="book-info">
+      <h2 class="book-title">{{ obra.titulo }}</h2>
+      <p class="book-introduction">{{ obra.descripcion }}</p>
+      
+      <p class="book-autor">Autor: {{ obra.autor }}</p>
+
+      <p>Genres:</p>
+      
+    </div>
+  </div>
+</div>
+
+</div>
 
         <div class="genres-container">
           
             <div class="genres-box">
-              <h5>Genres:</h5>
+           
               <ul>
                 <li class="genre fantasy">Fantasy</li>
                 <li class="genre adventure">Adventure</li>
@@ -27,9 +31,9 @@
               </ul>
             </div>
           </div>
-        </div>
-    </div>
-  </div>
+   
+
+
 
 
   <div ngbAccordion class="custom-accordion">
@@ -48,20 +52,19 @@
             <div>
               <a [routerLink]="['/Innovation_City/capitulo2']">
               Chapther 2-
-              <p class="chapter-title">El Ultimo Soldado del Reino</p></a><hr>
+              <p class="chapter-title">The Last Soldier of the Kingdom</p></a><hr>
             </div>
             <div>
               <a [routerLink]="['/Innovation_City/capitulo3']">
               Chapther 3-
-              <p class="chapter-title">La marea Alta</p></a>
+              <p class="chapter-title">High Tide</p></a>
             </div>
           </ng-template>
         </div>
       </div>
     </div>
-
-
   </div>
+
 
 
 

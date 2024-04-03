@@ -1,148 +1,158 @@
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .book-details {
-    display: flex;
-    position: relative; /* Establecer el contexto de posición */
-  }
-  
-  .book-cover {
-    border-radius: 5px;
-    height: 413px;
-    width: 310px; /* Ancho de la imagen del libro */
-    position: absolute; /* Posicionamiento absoluto */
-    top: 1px; /* Alinear la imagen con la parte superior del contenedor */
-    left: 0; /* Alinear la imagen con el borde izquierdo del contenedor */
-    margin: -1px; /* Espacio entre la imagen del libro y los bordes del contenedor */
-  }
-  
-  
-  .book-info {
-    margin-left: 330px; /* Margen izquierdo para evitar que el contenido se superponga con la imagen */
-  }
-  p{
-    width: 100%;
-  }
-  .book-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .book-introduction {
-    font-size: 16px;
-    line-height: 1.5; /* Espaciado entre líneas del texto de introducción */
-    overflow: hidden;
-  }
-  
-  .show-full {
-    overflow: visible; /* Mostrar todo el contenido cuando se hace clic */
-  }
-  
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.book-details {
+  display: flex;
+  position: relative; /* Establecer el contexto de posición */
+}
+
+.book-cover {
+  border-radius: 5px;
+  height: 413px;
+  width: 310px; /* Ancho de la imagen del libro */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 1px; /* Alinear la imagen con la parte superior del contenedor */
+  left: 0; /* Alinear la imagen con el borde izquierdo del contenedor */
+  margin: -1px; /* Espacio entre la imagen del libro y los bordes del contenedor */
+}
 
 
-  .genres-container {
-    display: flex;
-    padding-left: 0;
-  }
-  
-  .genres-box {
-    background-color: #f2f2f2;
-    padding: 5px;
-    border-radius: 10px;
-  }
-  
-  .genres h2 {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  h5{
-    text-align: left;
-  }
+.book-info {
+  margin-left: 330px; /* Margen izquierdo para evitar que el contenido se superponga con la imagen */
+}
+p{
+  width: 100%;
+}
+.book-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  .genres-box h5 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
+.book-introduction {
+  font-size: 16px;
+  line-height: 1.5; /* Espaciado entre líneas del texto de introducción */
+  overflow: hidden;
+  cursor: pointer; /* Cambiar cursor al hacer clic */
+}
 
-  .genres ul {
-    list-style: none;
-    padding-left: 0;
-   
-  }
-  .genres-box ul {
-      margin-top: 20px;
-    list-style-type: none;
-    padding: 0;
-  }
-  .genres-box ul li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  .genre {
-    font-size: 16px;
-    margin-bottom: 8px;
-    padding: 10px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    list-style-type: none; 
-  }
-  
-  .fantasy {
-    background-color: #6c5ce7;
-    color: #fff;
-  }
-  
-  .adventure {
-    background-color: #fdcb6e;
-    color: #333;
-  }
-  
-  .Survival{
-    background-color: #00b894;
-    color: #fff;
-  }
-  
-  .genre:hover {
-    transform: scale(1.05);
-  }
-  
-  .book-introduction {
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: justify;
-  }
-  
+.show-full {
+  overflow: visible; /* Mostrar todo el contenido cuando se hace clic */
+}
+
+
+
+.genres-box ul li {
+  display: inline-block;
+  margin: 0 10px 10px 0; /* Agregar un margen inferior para separación vertical */
+}
 
 
 
 
-  .chapter-container {
-    background-color: #f0f0f0; /* Color de fondo para el contenedor */
-    padding: 10px; /* Añade algo de espacio alrededor del contenido */
-    margin-bottom: 10px; /* Añade un margen inferior entre los contenedores de capítulos */
-  }
-  .chapter-link {
-    display: inline-block; /* Establece los enlaces como elementos en línea */
-    margin-right: 20px; /* Agrega un margen derecho para separación entre los enlaces */
-    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
-  }
-  
-  .chapter-title {
-    display: inline; /* Establece el título como un elemento en línea */
-    margin: 0; /* Elimina el margen predeterminado */
-  }
-  
-  .custom-accordion {
-    margin-bottom: 80px;
-    margin-top: 120px;
-    margin-left: 400px;
-    max-width: 700px; /* Ajusta el ancho máximo según sea necesario */
-    max-height: 500px; /* Ajusta la altura máxima según sea necesario */
-  }
+.genres-container {
+  margin-top: 20px; /* Espacio entre la información del libro y los géneros */
+}
+
+.genres-box {
+  padding-left: 5px;
+  padding-top: 5px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+
+.genres-box h5 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+.genre {
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding: 10px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  list-style-type: none; 
+}
+
+/* Colores personalizados para los géneros */
+.action {
+  background-color: #ff5733;
+  color: #fff;
+}
+
+.Survival {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.genre.Dark {
+  background-image: linear-gradient(to right, #660099, #003366); /* Gradient from purple to blue */
+  color: #fff; /* White text for readability */
+}
+
+.genre.Military {
+  background-color: #3897f0; /* Light blue for military theme */
+  color: #fff; /* White text for readability */
+}
+
+/* Otros estilos de géneros */
+.fantasy {
+  background-color: #6c5ce7;
+  color: #fff;
+}
+
+.adventure {
+  background-color: #fdcb6e;
+  color: #fff;
+}
+
+.genre:hover {
+  transform: scale(1.05);
+}
+
+.book-introduction {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+.chapter-container {
+  background-color: #f0f0f0; /* Color de fondo para el contenedor */
+  padding: 10px; /* Añade algo de espacio alrededor del contenido */
+  margin-bottom: 10px; /* Añade un margen inferior entre los contenedores de capítulos */
+}
+.chapter-link {
+  display: inline-block; /* Establece los enlaces como elementos en línea */
+  margin-right: 20px; /* Agrega un margen derecho para separación entre los enlaces */
+  text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+}
+
+.chapter-title {
+  display: inline; /* Establece el título como un elemento en línea */
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+.custom-accordion {
+  margin-bottom: 80px;
+  margin-top: 43px;
+  margin-left: 400px;
+  max-width: 700px; /* Ajusta el ancho máximo según sea necesario */
+  max-height: 500px; /* Ajusta la altura máxima según sea necesario */
+}
 
