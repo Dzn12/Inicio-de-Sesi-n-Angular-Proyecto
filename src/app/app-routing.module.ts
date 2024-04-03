@@ -12,6 +12,7 @@ import { BookDescription2Component } from './book-description2/book-description2
 import { BookDescription3Component } from './book-description3/book-description3.component';
 import { BookDescription4Component } from './book-description4/book-description4.component';
 import { CapituloComponent } from './capitulo/capitulo.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: '', component: BienvenidoComponent }, // Ruta principal
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'book-description3', component: BookDescription3Component },
   { path: 'book-description4', component: BookDescription4Component },
   { path: 'capitulo', component: CapituloComponent }, 
+  {path : 'header' , component: HeaderComponent}
 ];
 
 @NgModule({
