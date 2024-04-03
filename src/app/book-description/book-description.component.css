@@ -1,39 +1,60 @@
 /* book-description.component.css */
 
+
+
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  max-width: 800px;
+  margin: 40px auto 0; /* Agregar margen superior de 20px */
+  padding: 20px;
+  background: linear-gradient(to bottom, #f0f0f0, #dcdcdc); /* Gradiente de fondo con colores más oscuros */
+  border-radius: 8px;
+}
+
   
   .book-details {
     display: flex;
-    align-items: center;
+
   }
   
   .book-cover {
     width: 310px;
     height: auto;
-    border-radius: 5px;
     margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra suave */
+    transition: transform 0.3s ease; /* Agregar efecto de transición */
   }
+  
+  .book-cover:hover {
+    transform: scale(1.04); /* Aumentar el tamaño al pasar el mouse */
+  }
+  
   
   .book-info {
     flex: 1;
+    padding: 0 20px; /* Añadir margen a los lados */
   }
   
+  
   .book-title {
-    margin-top: -30px;
     font-size: 24px;
     margin-bottom: 10px;
   }
   
   .book-introduction {
     font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 1.6; /* Ajustar según tus preferencias */
+   /* margin-left: 5px;  Ajustar según tus preferencias */
+    margin-right: 20px; /* Ajustar según tus preferencias */
+}
 
+
+.book-autor {
+  margin-top: 0px; /* Ajusta el margen superior según sea necesario */
+  font-size: 18px; /* Ajusta el tamaño del texto */
+  font-weight: 600 /* Aplica un estilo de fuente en negrita para destacarlo */
+}
 
 
 
@@ -78,16 +99,7 @@
 
 
 
-  .genres-container {
-    display: flex;
-    padding-left: 0;
-  }
-  
-  .genres-box {
-    background-color: #f2f2f2;
-    padding: 5px;
-    border-radius: 10px;
-  }
+ 
   
   .genres h2 {
     font-size: 18px;
@@ -148,7 +160,7 @@
   
   .book-introduction {
     font-size: 16px;
-    margin-bottom: 20px;
+  
     text-align: justify;
   }
   

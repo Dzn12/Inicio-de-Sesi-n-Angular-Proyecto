@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+
+
+
+
+
+<div class="container">
+    <div class="book-details">
+      <img src="../../assets/14 (1).jpg" alt="Book Cover" class="book-cover">
+      <div class="book-info">
+        <h2 class="book-title">The Book That Wouldn't Burn</h2>
+        <p class="book-introduction" [ngClass]="{ 'show-full': showFull }" (click)="toggleShow()">
+            All books, no matter their binding, will fall to dust. The stories they carry may last longer. They might outlive the paper, the library, even the language in which they were first written.
+            The greatest story can reach the stars . . .
+            This is the start of an incredible new journey from the internationally bestselling author of Prince of Thorns, in which, though the pen may be mightier than the sword, blood will be spilled and cities burned…
+
+          <span *ngIf="showFull">
+            Evar has lived his whole life trapped within a vast library, older than empires and larger than cities.
+            Livira has spent hers in a tiny settlement out on the Dust where nightmares stalk and no one goes.
+            The world has never noticed them.
+            That’s about to change.
+          </span>
+        </p>
+        
+         
+        <div class="genres-container">
+            <div class="genres-box">
+              <h5>Genres:</h5>
+              <ul class="hola">
+                <li class="genre fantasy">Comedy</li>
+                <li class="genre adventure">Adventure</li>
+                <li class="genre  Survival">Romance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div> 
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div ngbAccordion class="custom-accordion">
+    <div ngbAccordionItem [collapsed]="false" class="accordion-item">
+      <h2 ngbAccordionHeader class="accordion-header">
+        <button ngbAccordionButton class="accordion-button">Volume 1</button>
+      </h2>
+      <div ngbAccordionCollapse class="accordion-collapse">
+        <div ngbAccordionBody>
+          <ng-template>
+            <div>
+              <a href="#" class="chapter-link">Chapther 1-
+              <p class="chapter-title">El Amanecer del Camino</p></a><hr>
+            </div>
+            <div>
+              <a href="#" class="chapter-link">Chapther 2-
+              <p class="chapter-title">El Ultimo Soldado del Reino</p></a><hr>
+            </div>
+            <div>
+              <a href="#" class="chapter-link">Chapther 3-
+              <p class="chapter-title">La marea Alta</p></a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+
+
+
+

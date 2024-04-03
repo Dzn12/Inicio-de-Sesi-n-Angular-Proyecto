@@ -30,7 +30,7 @@
   .imagen img {
   max-width: 200px; /* Ajustar el tamaño de la imagen según sea necesario */
   height: auto;
-  margin-left: 150px;
+  margin-left: 290px;
   }
   
   .dropdown {
@@ -447,7 +447,13 @@
   }
   
   
-  
+  .cuatromage1{
+    width: 200px;
+    height: 298px;
+    margin-top: 45px;
+    transition: transform 0.3s ease;
+    }
+    
   
   
   

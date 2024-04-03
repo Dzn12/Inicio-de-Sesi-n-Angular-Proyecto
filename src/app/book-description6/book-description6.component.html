@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+
+
+
+
+
+<div class="container">
+    <div class="book-details">
+      <img src="../../assets/10 (1).jpg" alt="Book Cover" class="book-cover">
+      <div class="book-info">
+        <h2 class="book-title">Sesus Interruptus</h2>
+        <p class="book-introduction" [ngClass]="{ 'show-full': showFull }" (click)="toggleShow()">
+            Miguel Fugit Royan, office employee. He stretches so as not to die. He drinks coffee so as not to drink himself.
+             And he is going to transform himself into Miguel, El Estirador, as a last will not to transform himself into something 
+             else less desirable or even into a thing less thing. After stretching the week with a day that nobody asked for but that
+              he swore we all needed, the "super Sunday", Miguel will fall in disgrace, but<strong>....</strong>
+          <span *ngIf="showFull">
+            not before they buy his idea to package it and get the juice he never wanted to get out of himself. Miguel Fugit, sucked and dazed, will ask the flies to torment him so as not to torment himself. And he will instruct himself to kill himself at night and in his sleep so as not to realize it. Or maybe not. Maybe we all killed Miguel. He will say it was someone else. But maybe Miguel did not die. Maybe the dead are others.
+          </span>
+        </p>
+        
+         
+        <div class="genres-container">
+            <div class="genres-box">
+              <h5>Genres:</h5>
+              <ul class="hola">
+                <li class="genre fantasy">Horror</li>
+                <li class="genre adventure">Fiction</li>
+                <li class="genre  Survival">Coming-of-age</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div> 
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div ngbAccordion class="custom-accordion">
+    <div ngbAccordionItem [collapsed]="false" class="accordion-item">
+      <h2 ngbAccordionHeader class="accordion-header">
+        <button ngbAccordionButton class="accordion-button">Volume 1</button>
+      </h2>
+      <div ngbAccordionCollapse class="accordion-collapse">
+        <div ngbAccordionBody>
+          <ng-template>
+            <div>
+              <a href="#" class="chapter-link">Chapther 1-
+              <p class="chapter-title">El Amanecer del Camino</p></a><hr>
+            </div>
+            <div>
+              <a href="#" class="chapter-link">Chapther 2-
+              <p class="chapter-title">El Ultimo Soldado del Reino</p></a><hr>
+            </div>
+            <div>
+              <a href="#" class="chapter-link">Chapther 3-
+              <p class="chapter-title">La marea Alta</p></a>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<app-footer></app-footer>
+
+
+

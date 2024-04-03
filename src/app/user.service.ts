@@ -6,17 +6,30 @@ import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { User } from './usuer.model'; // Asegúrate de ajustar la ruta correctamente
 import { Capitulo } from './capitulo.model';
+import { Obra } from './book.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://10.118.2.216:8000';
-  //private apiUrl = 'http://127.0.0.1:8000';
+  
+  //private apiUrl = 'http://10.118.2.216:8000';
+  private apiUrl = 'http://127.0.0.1:8000';
 
-private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
+  private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
 
   constructor(private http: HttpClient) { }
+
+// Obra
+
+getObraById(id: number): Observable<Obra> {
+  return this.http.get<Obra>(`${this.apiUrl}/api/obra/${id}`).pipe(
+    catchError(this.handleError<Obra>('getObraById'))
+  );
+}
+
+
+// Usuario
 
   registerUser(usuario: User): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/usuario/registro`, usuario).pipe(
@@ -35,6 +48,7 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
     localStorage.setItem(this.tokenKey, token);
   }
 
+
   // Método para obtener el token del localStorage
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
@@ -47,20 +61,6 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
   }
   
   
-  //updateUser(email:string ,userId: string, pswd: string): Observable<any> {
-   // console.log("Hola que tal",userId);
-
-   // const params = new HttpParams()
-   // .set('name', userId)
-   // .set('pswd', pswd);
-
-
-   // return this.http.put(`${this.apiUrl}/api/usuario/editar/${email}`, {params}).pipe(
-   //   catchError(this.handleError<any>('updateUser'))
-   // );
- // }
-
-
  updateUser(email: string, name: string, pswd: string): Observable<any> {
   const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
  
@@ -69,13 +69,6 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
   );
 }
 
-
-
-
-
-
- 
-  
   deleteUser(userId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
       catchError(this.handleError<any>('deleteUser'))
@@ -88,6 +81,12 @@ private tokenKey = 'authToken'; // Define una clave para el token en el localSto
     );
   }
 
+
+
+
+
+
+  
   
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

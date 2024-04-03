@@ -2,13 +2,14 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  div {
-    width: 300px;
+  .arriba {
+    width: 900px;
     margin: 0 auto;
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
   }
   
   h2 {
@@ -47,3 +48,35 @@ body {
     background-color: #459bcc;
   }
   
+
+
+  .success-message {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #dff0d8; /* Color de fondo verde suave */
+    color: #3c763d; /* Color del texto verde oscuro */
+    border: 1px solid #d6e9c6; /* Borde verde claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px;  /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado inferior */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+
+  .error-message {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f2dede; /* Color de fondo rojo suave */
+    color: #a94442; /* Color del texto rojo oscuro */
+    border: 1px solid #ebccd1; /* Borde rojo claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    margin-bottom: 10px; /* Espaciado inferior */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+
+
+  .bajo{
+    margin-top: 50px;
+  }
