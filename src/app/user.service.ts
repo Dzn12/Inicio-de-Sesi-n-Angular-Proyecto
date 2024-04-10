@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 import { User } from './usuer.model'; // Asegúrate de ajustar la ruta correctamente
 import { Capitulo } from './capitulo.model';
 import { Obra } from './book.model';
+import { Genero } from './genero.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +27,13 @@ getObraById(id: number): Observable<Obra> {
   return this.http.get<Obra>(`${this.apiUrl}/api/obra/${id}`).pipe(
     catchError(this.handleError<Obra>('getObraById'))
   );
-}
+  }
 
+
+  getGenerosByObraId(id: number): Observable<Genero[]> {
+    return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
+  }
+  
 
 // Usuario
 
@@ -80,11 +86,6 @@ getObraById(id: number): Observable<Obra> {
       catchError(this.handleError<Capitulo>('getCapitulo'))
     );
   }
-
-
-
-
-
 
   
   

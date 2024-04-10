@@ -1,37 +1,26 @@
 
 <app-header></app-header>
 
-<div class="fondo">
 
-<div class="container" *ngIf="obra">
+
+<div class="contenedor" *ngIf="obra">
+  <div class="container">
   <div class="book-details">
-    <img src="../../assets/1 (1).jpg" alt="Book Cover" class="book-cover">
+    <img [src]="obra.rutaImagen" alt="Book Cover" class="book-cover"> <!-- Mostrar la imagen -->
     <div class="book-info">
       <h2 class="book-title">{{ obra.titulo }}</h2>
-      <p class="book-introduction">{{ obra.descripcion }}</p>
-      
+      <p class="book-introduction">{{ obra.descripcion }}</p> 
       <p class="book-autor">Autor: {{ obra.autor }}</p>
-
-      <p>Genres:</p>
-      
+      <p class="book-genero">Genders:</p>
+      <ul>
+        <li *ngFor="let genero of generos">{{ genero.nombre }}</li>
+      </ul>
     </div>
   </div>
 </div>
 
-</div>
 
-        <div class="genres-container">
-          
-            <div class="genres-box">
-           
-              <ul>
-                <li class="genre fantasy">Fantasy</li>
-                <li class="genre adventure">Adventure</li>
-                <li class="genre science-fiction">Science Fiction</li>
-              </ul>
-            </div>
-          </div>
-   
+
 
 
 
@@ -68,15 +57,25 @@
 
 
 
-
-
-
-
-
-
-
-
-
  <!-- <button class="save-button">Save Book</button>-->
 
   <app-footer></app-footer>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
