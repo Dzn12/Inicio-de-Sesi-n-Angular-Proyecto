@@ -29,11 +29,19 @@ getObraById(id: number): Observable<Obra> {
   );
   }
 
-
   getGenerosByObraId(id: number): Observable<Genero[]> {
     return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
   }
   
+
+// Método para obtener obras por género
+getObrasByGenero(generoId: number): Observable<Obra[]> {
+  const url = `${this.apiUrl}/generos/${generoId}`; // Endpoint en el backend Symfony
+  return this.http.get<Obra[]>(url);
+}
+
+  
+
 
 // Usuario
 
@@ -81,12 +89,11 @@ getObraById(id: number): Observable<Obra> {
     );
   }
 
-  getCapitulo(id: number): Observable<Capitulo> {
-    return this.http.get<Capitulo>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
-      catchError(this.handleError<Capitulo>('getCapitulo'))
+  getCapitulo(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
+      catchError(this.handleError<any>('getCapitulo'))
     );
   }
-
   
   
   private handleError<T>(operation = 'operation', result?: T) {

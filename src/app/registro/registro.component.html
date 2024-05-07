@@ -6,7 +6,7 @@
     <img src="assets/nvlproject.png" alt="Logo" />
     <h3>Registro de usuario</h3>
     <form (ngSubmit)="registerUser()" class="form-group">
-      <label for="nombre" class="form-overlay">Nombre:</label>
+      <label for="nombre" class="form-overlay"><h4>Nombre:</h4></label>
       <input
         type="text"
         id="nombre"
@@ -15,25 +15,25 @@
         required
       />
       <br />
-      <label for="correo" class="form-overlay">Correo:</label>
+      <label for="correo" class="form-overlay"><h4>Correo:</h4></label>
       <input
         type="email"
         id="correo"
         name="correo"
         [(ngModel)]="usuario.correo"
         required
+        email  
       />
       <br />
-      <label for="password" class="form-overlay">Contraseña:</label>
+      <label for="password" class="form-overlay"><h4>Contraseña:</h4></label>
       <input type="password" id="password" name="password" [(ngModel)]="usuario.password" required>
       <br>
-      <label for="confirmPassword" class="form-overlay">Confirma tu contraseña:</label>
+      <label for="confirmPassword" class="form-overlay"><h4>Confirma tu contraseña:</h4></label>
       <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword"
-             (ngModelChange)="validatePasswords()">
+             (ngModelChange)="validatePasswords()" required>
       <div *ngIf="passwordsMismatch" class="error-message">
-        Las contraseñas no coinciden.
+        <p>Las contraseñas no coinciden.</p>
       </div>
-      <br />
       <button type="submit" class="form-overlay">Registrarse</button>
       <div *ngIf="errorMessage" class="error-message">
         {{ errorMessage }}

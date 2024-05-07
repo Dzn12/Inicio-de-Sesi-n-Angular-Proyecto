@@ -1,0 +1,122 @@
+/* Estilo para el contenedor principal */
+.filter-container {
+  margin-bottom: 20px;
+  margin-left: 300px;
+  margin-top: 30px;
+}
+
+h2{
+  margin-left: 300px;
+  margin-top: 30px;
+}
+
+/* Estilo para la etiqueta del género */
+.filter-container label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Estilo para el select de género */
+.filter-container select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Estilo para el botón de búsqueda */
+.filter-container button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Estilo para el botón de búsqueda al pasar el ratón */
+.filter-container button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Contenedor principal del resultado */
+.result-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px; /* Añadir espacio en blanco alrededor del contenedor */
+  background-color: #f5f5f5; /* Color de fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados para un aspecto más moderno */
+  width: 900px;
+  margin-left: 300px;
+}
+
+/* Columna de cada libro */
+.obra-column {
+  flex: 0 0 calc(30% - 20px); /* Ocupa el 30% del ancho de la fila con espacio entre columnas */
+  margin-bottom: 20px; /* Espacio entre filas */
+  padding: 20px; /* Espacio interno */
+  background-color: #fff; /* Color de fondo blanco */
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efecto de sombra sutil */
+  transition: all 0.3s ease; /* Transición suave para los cambios de estilo */
+}
+
+/* Título del libro */
+.obra-column h4 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Color de texto más oscuro */
+}
+
+/* Contenedor de la imagen y el texto */
+.obra-details {
+  display: flex; /* Mostrar elementos en línea */
+}
+
+/* Imagen del libro */
+.obra-details img {
+  width: 30%; /* Ancho de la imagen */
+  height: 300px; /* Ajusta la altura automáticamente en proporción al ancho */
+  margin-right: 20px; /* Espacio entre la imagen y el texto */
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Descripción del libro */
+.obra-details p {
+  margin: 0; /* Elimina el margen predeterminado */
+  color: #666; /* Color de texto gris claro */
+}
+
+/* Texto en negrita para la descripción y el autor */
+.obra-details strong {
+  font-weight: bold;
+}
+
+/* Hover effect on columns */
+.obra-column:hover {
+  transform: translateY(-5px); /* Mover la columna ligeramente hacia arriba */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Efecto de sombra más intenso */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .obra-column {
+    flex: 0 0 calc(50% - 20px); /* Ajustar el ancho de las columnas en pantallas pequeñas */
+  }
+
+  /* Reducir el tamaño de la imagen en pantallas más pequeñas */
+  .obra-details img {
+    width: 40%;
+  }
+}
+  
+.no-results {
+  margin-top: 20px;
+  color: #f00;
+}

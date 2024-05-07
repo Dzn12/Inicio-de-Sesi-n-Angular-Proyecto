@@ -1,0 +1,38 @@
+
+<app-header></app-header>
+
+ 
+ <h2>Books by genre:</h2>
+
+<div class="filter-container"> 
+  <label for="genero">Select a genre:</label>
+  <select id="genero" [(ngModel)]="generoId">
+    <option *ngFor="let genero of generosDisponibles" [value]="genero.id">{{ genero.nombre }}</option>
+  </select>
+  <button (click)="getObrasByGenero()">Buscar</button>
+</div>
+
+<div class="result-container" *ngIf="obras.length > 0">
+
+  <div class="obra-row">
+    <div class="obra-column" *ngFor="let obra of obras">
+      <h4>{{ obra.titulo }}</h4>
+      <div class="obra-details">
+        <img *ngIf="obra.rutaImagen" [src]="obra.rutaImagen" alt="Imagen de la obra">
+        <p><strong>Descripción:</strong> {{ obra.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="no-results" *ngIf="obras.length === 0">
+  <p>No se encontraron obras para este género.</p>
+</div>
+
+</div>
+
+
+
+
+
+
+<app-footer></app-footer>
+

@@ -66,9 +66,7 @@ body {
   .error-message {
     text-align: center;
     margin-top: 20px;
-    background-color: #f2dede; /* Color de fondo rojo suave */
     color: #a94442; /* Color del texto rojo oscuro */
-    border: 1px solid #ebccd1; /* Borde rojo claro */
     border-radius: 5px; /* Bordes redondeados */
     padding: 10px 20px; /* Espaciado interno */
     margin-bottom: 10px; /* Espaciado inferior */

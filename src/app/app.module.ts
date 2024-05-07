@@ -20,8 +20,10 @@ import { BookDescriptionComponent } from './book-description/book-description.co
 import { CapituloComponent } from './Innovation_City/capitulo/capitulo.component';
 import { Capitulo2Component } from './Innovation_City/capitulo2/capitulo2.component';
 import { Capitulo3Component } from './Innovation_City/capitulo3/capitulo3.component';
-
-
+import { FilterGendersComponent } from './filter-genders/filter-genders.component';
+import { PopupComponent } from './popup/popup.component';
+import { ComentarioService } from './comentario.service';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,9 @@ import { Capitulo3Component } from './Innovation_City/capitulo3/capitulo3.compon
     CapituloComponent,
     Capitulo2Component,
     Capitulo3Component,
-    HeaderComponent
+    HeaderComponent,
+    FilterGendersComponent,
+    PopupComponent
   ],
   imports: [
     AccordionModule.forRoot(),
@@ -48,7 +52,9 @@ import { Capitulo3Component } from './Innovation_City/capitulo3/capitulo3.compon
     NgbModule,
     NgbCarouselModule // Agrega NgbCarouselModule aquí
   ],
-  providers: [],
+  providers: [
+    ComentarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { PopupComponent } from '../popup/popup.component'; // Importa el componente de popup
 
 @Component({
   selector: 'app-bienvenido',
@@ -80,7 +81,16 @@ export class BienvenidoComponent implements OnInit {
     // Agrega más objetos para más diapositivas
   ];
   currentSlide = 0;
+  showPopup: boolean = false; // Inicialmente, el popup está oculto
 
+  openPopup() {
+    this.showPopup = true; // Muestra el popup cuando se llama esta función
+  }
+
+  closePopup() {
+    this.showPopup = false; // Oculta el popup cuando se llama esta función
+  }
+  
   prevSlide() {
     this.currentSlide = Math.max(0, this.currentSlide - 1);
   }
