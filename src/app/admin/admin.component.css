@@ -1,0 +1,54 @@
+/* Estilo general del contenedor de la lista */
+.admin-list-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+ 
+  /* Estilo para los elementos de la lista */
+  .admin-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+ 
+  .admin-list-container li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .admin-list-container li:last-child {
+    border-bottom: none;
+  }
+ 
+  /* Estilo para los nombres y correos en la lista */
+  .admin-list-container .user-info {
+    font-size: 16px;
+    color: #333;
+  }
+ 
+  /* Estilo para el botón de eliminar */
+  .button-eliminar {
+    padding: 8px 16px;
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  .button-eliminar:hover {
+    background-color: #c82333; /* Rojo oscuro */
+  }
+ 
+  /* Añade algún margen alrededor del contenedor para mejor espaciado */
+  body {
+    margin: 20px;
+  }

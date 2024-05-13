@@ -74,6 +74,13 @@ getObrasByGenero(generoId: number): Observable<Obra[]> {
     );
   }
   
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/api/usuarios`).pipe(
+      catchError(this.handleError<User[]>('getUsers', []))
+    );
+  }
+   
+
   
  updateUser(email: string, name: string, pswd: string): Observable<any> {
   const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
@@ -83,11 +90,14 @@ getObrasByGenero(generoId: number): Observable<Obra[]> {
   );
 }
 
-  deleteUser(userId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
-      catchError(this.handleError<any>('deleteUser'))
-    );
-  }
+deleteUser(userId: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/api/usuarios/${userId}`).pipe(
+    catchError(error => {
+      console.error('Error al eliminar usuario:', error);
+      throw error;
+    })
+  );
+}
 
   getCapitulo(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/api/capitulos/${id}`).pipe(

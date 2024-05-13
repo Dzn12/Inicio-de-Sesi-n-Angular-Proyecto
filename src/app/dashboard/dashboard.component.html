@@ -29,13 +29,20 @@
         <div class="search">
           <input type="text" placeholder="Search">
         </div>
-        <div class="sign-in">
-          <button id="avatar-btn" aria-haspopup="true" class="avatar-btn" aria-label="Menú de la cuenta" [routerLink]="'/update'">
-            <img id="avatar-img" draggable="false" class="avatar-img" alt="Icono de perfil" [src]="avatarIcon">
+        
+        <div class="dropdown">
+          <button id="avatar-btn" aria-haspopup="true" class="avatar-btn" aria-label="Menú de la cuenta" (click)="toggleMenu()">
+            <img id="avatar-img" draggable="false" class="avatar-img" alt="Icono de perfil" [src]="avatarIcon" >
           </button>
-          
-          
+        
+          <div *ngIf="showMenu" class="dropdown-content">
+            <a [routerLink]="'/perfil'">Profile</a>
+            <a [routerLink]="'/update'">Update User </a>
+            <a [routerLink]="'/admin'">Delete Users</a>
+            <a [routerLink]="'/bienvenido'">Sign Out</a>
+          </div>
         </div>
+
       </div>
     </header>
     <hr/>

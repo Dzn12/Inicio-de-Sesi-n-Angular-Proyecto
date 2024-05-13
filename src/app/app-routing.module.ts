@@ -14,7 +14,8 @@ import { Capitulo3Component } from './Innovation_City/capitulo3/capitulo3.compon
 import { HeaderComponent } from './header/header.component';
 import { FilterGendersComponent } from './filter-genders/filter-genders.component';
 import { PopupComponent } from './popup/popup.component';
-
+import { PerfilComponent } from './perfil/perfil.component';
+import { AdministracionComponent } from './admin/admin.component';
 const routes: Routes = [
   { path: '', component: BienvenidoComponent }, // Ruta principal
   { path: 'registro', component: RegistroComponent },
@@ -28,7 +29,9 @@ const routes: Routes = [
   { path: 'Innovation_City/capitulo3', component: Capitulo3Component },
   {path : 'header' , component: HeaderComponent},
   {path : 'filter-genders', component: FilterGendersComponent},
-  {path : 'popup', component : PopupComponent}
+  {path : 'popup', component : PopupComponent},
+  {path : 'perfil', component : PerfilComponent},
+  {path : 'admin', component : AdministracionComponent}
 ];
 
 @NgModule({

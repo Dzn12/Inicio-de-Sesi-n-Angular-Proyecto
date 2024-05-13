@@ -23,7 +23,8 @@ import { Capitulo3Component } from './Innovation_City/capitulo3/capitulo3.compon
 import { FilterGendersComponent } from './filter-genders/filter-genders.component';
 import { PopupComponent } from './popup/popup.component';
 import { ComentarioService } from './comentario.service';
- 
+import { PerfilComponent } from './perfil/perfil.component';
+import { AdministracionComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,9 @@ import { ComentarioService } from './comentario.service';
     Capitulo3Component,
     HeaderComponent,
     FilterGendersComponent,
-    PopupComponent
+    PopupComponent,
+    PerfilComponent,
+    AdministracionComponent
   ],
   imports: [
     AccordionModule.forRoot(),

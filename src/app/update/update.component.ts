@@ -19,6 +19,7 @@ export class UpdateComponent implements OnInit {
   email:string | null = null;
   updateSuccess: boolean = false;
   updateError: boolean = false;
+  buttonPressed: boolean = false; // Variable to track if the button is pressed
 
   constructor(
     private userService: UserService,
@@ -38,6 +39,7 @@ export class UpdateComponent implements OnInit {
   }
 
   updateUser() {
+    this.buttonPressed = true; // Set button pressed status
     if (this.userId !== null && this.pswd !== null && this.email !== null) {
       if (this.nombre === null || this.nombre.trim() === '') {
         console.error('No se proporcionaron datos para actualizar.');

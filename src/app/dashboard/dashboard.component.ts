@@ -83,6 +83,12 @@ export class DashboardComponent implements OnInit {
   ];
   currentSlide = 0;
 
+  showMenu: boolean = false;
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+
   prevSlide() {
     this.currentSlide = Math.max(0, this.currentSlide - 1);
   }
