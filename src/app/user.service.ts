@@ -1,4 +1,5 @@
 
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -13,10 +14,10 @@ import { Genero } from './genero.model';
   providedIn: 'root'
 })
 export class UserService {
-  
-  //private apiUrl = 'http://10.118.2.216:8000';
-  private apiUrl = 'http://127.0.0.1:8000';
 
+  //private apiUrl = 'http://10.118.3.18:8000'; //Alejandro
+  //private apiUrl = 'http://127.0.0.1:8000';
+  private apiUrl =""; //personal
   private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
 
   constructor(private http: HttpClient) { }
@@ -29,18 +30,10 @@ getObraById(id: number): Observable<Obra> {
   );
   }
 
+
   getGenerosByObraId(id: number): Observable<Genero[]> {
     return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
   }
-  
-
-// Método para obtener obras por género
-getObrasByGenero(generoId: number): Observable<Obra[]> {
-  const url = `${this.apiUrl}/generos/${generoId}`; // Endpoint en el backend Symfony
-  return this.http.get<Obra[]>(url);
-}
-
-  
 
 
 // Usuario
@@ -48,7 +41,7 @@ getObrasByGenero(generoId: number): Observable<Obra[]> {
   registerUser(usuario: User): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/usuario/registro`, usuario).pipe(
       catchError(this.handleError<any>('registerUser'))
-    );  
+    );
   }
 
   loginUser(usuario: User): Observable<any> {
@@ -73,39 +66,30 @@ getObrasByGenero(generoId: number): Observable<Obra[]> {
       catchError(this.handleError<User>('getUser'))
     );
   }
-  
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}/api/usuarios`).pipe(
-      catchError(this.handleError<User[]>('getUsers', []))
-    );
-  }
-   
 
-  
+
  updateUser(email: string, name: string, pswd: string): Observable<any> {
   const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
- 
+
   return this.http.put(`${this.apiUrl}/api/usuario/editar/${email}`, body).pipe(
     catchError(this.handleError<any>('updateUser'))
   );
 }
 
-deleteUser(userId: number): Observable<any> {
-  return this.http.delete(`${this.apiUrl}/api/usuarios/${userId}`).pipe(
-    catchError(error => {
-      console.error('Error al eliminar usuario:', error);
-      throw error;
-    })
-  );
-}
-
-  getCapitulo(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
-      catchError(this.handleError<any>('getCapitulo'))
+  deleteUser(userId: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
+      catchError(this.handleError<any>('deleteUser'))
     );
   }
-  
-  
+
+  getCapitulo(id: number): Observable<Capitulo> {
+    return this.http.get<Capitulo>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
+      catchError(this.handleError<Capitulo>('getCapitulo'))
+    );
+  }
+
+
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
