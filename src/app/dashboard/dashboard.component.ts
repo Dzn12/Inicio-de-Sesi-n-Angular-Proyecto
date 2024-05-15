@@ -84,7 +84,7 @@ export class DashboardComponent implements OnInit {
   currentSlide = 0;
 
   showMenu: boolean = false;
-
+  isAdmin: boolean =false;
   toggleMenu() {
     this.showMenu = !this.showMenu;
   }
@@ -106,6 +106,7 @@ export class DashboardComponent implements OnInit {
   
 
   ngOnInit() {
+   this.isAdmin = localStorage.getItem('isAdmin') === 'true';
     setInterval(() => {
       this.nextSlide();
     }, 3000); // 3000 milisegundos = 3 segundos

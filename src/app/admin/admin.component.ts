@@ -36,15 +36,14 @@ export class AdministracionComponent implements OnInit { // Asegúrate de implem
     }
  
     this.userService.deleteUser(userId).subscribe(
-      (respuesta: any) => {
-        console.log('Usuario eliminado:', respuesta);
-        // Eliminar el usuario de la lista de usuarios para actualizar la interfaz de usuario.
+      response => {
+        console.log('Usuario eliminado:', response);
         this.usuarios = this.usuarios.filter(u => u.id !== userId);
       },
-      (error: any) => {
+      error => {
         console.error('Error al eliminar usuario:', error);
-        // Manejar el error, por ejemplo, mostrar un mensaje al usuario.
+        // Aquí puedes manejar errores, por ejemplo, mostrando un mensaje al usuario.
       }
     );
   }
-}
+}  

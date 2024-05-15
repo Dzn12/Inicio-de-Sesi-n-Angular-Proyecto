@@ -92,10 +92,7 @@ getObrasByGenero(generoId: number): Observable<Obra[]> {
 
 deleteUser(userId: number): Observable<any> {
   return this.http.delete(`${this.apiUrl}/api/usuarios/${userId}`).pipe(
-    catchError(error => {
-      console.error('Error al eliminar usuario:', error);
-      throw error;
-    })
+    catchError(this.handleError<any>('deleteUser'))
   );
 }
 

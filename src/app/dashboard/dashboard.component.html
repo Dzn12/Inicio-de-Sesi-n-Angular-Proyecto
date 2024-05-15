@@ -38,7 +38,7 @@
           <div *ngIf="showMenu" class="dropdown-content">
             <a [routerLink]="'/perfil'">Profile</a>
             <a [routerLink]="'/update'">Update User </a>
-            <a [routerLink]="'/admin'">Delete Users</a>
+            <a *ngIf="isAdmin" [routerLink]="'/admin'">Delete Users</a>
             <a [routerLink]="'/bienvenido'">Sign Out</a>
           </div>
         </div>
