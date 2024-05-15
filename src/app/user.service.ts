@@ -76,17 +76,19 @@ getObraById(id: number): Observable<Obra> {
   );
 }
 
-  deleteUser(userId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
-      catchError(this.handleError<any>('deleteUser'))
+deleteUser(userId: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/api/usuarios/${userId}`).pipe(
+    catchError(this.handleError<any>('deleteUser'))
+  );
+}
+
+  getCapitulo(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
+      catchError(this.handleError<any>('getCapitulo'))
     );
   }
 
-  getCapitulo(id: number): Observable<Capitulo> {
-    return this.http.get<Capitulo>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
-      catchError(this.handleError<Capitulo>('getCapitulo'))
-    );
-  }
+
 
 
 

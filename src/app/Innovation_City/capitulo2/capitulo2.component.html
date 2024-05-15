@@ -1,4 +1,15 @@
+<app-header></app-header>
 <div *ngIf="capitulo">
     <h2 class="titulo">{{ capitulo.titulo }}</h2>
     <div class="contenido"  [innerHTML]="capitulo.contenido"></div>
+
+
+    <div class="contenedor-botones">
+        <button class="boton-previo" [routerLink]="['../capitulo']">Previous Chapter</button>
+        <div class="separador"></div>
+        <button class="boton-siguiente" [routerLink]="['../capitulo3']">Next Chapter</button>
+    </div>
+    
+    
 </div>
+<app-footer></app-footer>
