@@ -1,0 +1,45 @@
+/* Estilo general para el contenedor del perfil */
+.perfil-info {
+    width: 400px; /* Ajusta el ancho según tus necesidades */
+    margin: 60px auto; /* Centra el contenedor horizontalmente y añade margen superior e inferior */
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border-radius: 10px; /* Redondea las esquinas más */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más definida */
+    padding: 30px; /* Aumenta el espacio interno */
+  }
+  
+  /* Estilo para el título */
+  .perfil-info h2 {
+    text-align: center;
+    color: #333; /* Texto gris oscuro */
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para los campos */
+  .field {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para las etiquetas */
+  .field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #666; /* Texto gris claro */
+  }
+  
+  /* Estilo para los valores */
+  .field div {
+    background-color: #fff; /* Fondo blanco */
+    padding: 12px; /* Aumenta el espacio interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Redondea las esquinas de los valores */
+  }
+  
+
+  app-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+  }
+  

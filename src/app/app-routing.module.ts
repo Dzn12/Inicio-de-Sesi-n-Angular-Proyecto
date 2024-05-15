@@ -12,7 +12,10 @@ import { CapituloComponent } from './Innovation_City/capitulo/capitulo.component
 import { Capitulo2Component } from './Innovation_City/capitulo2/capitulo2.component';
 import { Capitulo3Component } from './Innovation_City/capitulo3/capitulo3.component';
 import { HeaderComponent } from './header/header.component';
-
+import { FilterGendersComponent } from './filter-genders/filter-genders.component';
+import { PopupComponent } from './popup/popup.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { AdministracionComponent } from './admin/admin.component';
 const routes: Routes = [
   { path: '', component: BienvenidoComponent }, // Ruta principal
   { path: 'registro', component: RegistroComponent },
@@ -24,8 +27,11 @@ const routes: Routes = [
   { path: 'Innovation_City/capitulo', component: CapituloComponent },
   { path: 'Innovation_City/capitulo2', component: Capitulo2Component },
   { path: 'Innovation_City/capitulo3', component: Capitulo3Component },
-  {path : 'header' , component: HeaderComponent}
-  
+  {path : 'header' , component: HeaderComponent},
+  {path : 'filter-genders', component: FilterGendersComponent},
+  {path : 'popup', component : PopupComponent},
+  {path : 'perfil', component : PerfilComponent},
+  {path : 'admin', component : AdministracionComponent}
 ];
 
 @NgModule({

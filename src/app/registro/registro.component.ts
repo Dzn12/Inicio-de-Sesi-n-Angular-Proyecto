@@ -14,8 +14,7 @@ export class RegistroComponent {
 
   usuario: User = new User();
   confirmPassword: string = '';
-  isLoggedIn: boolean = false;
-  passwordsMismatch: boolean = false; // Bandera que indica diferentes pswds
+  passwordsMismatch: boolean = false; // Bandera que indica diferentes contraseñas
 
   registroExitoso: boolean = false;
   errorMessage: string = '';
@@ -23,47 +22,69 @@ export class RegistroComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   registerUser() {
-    // Valida pswds antes de enviar el formulario
-    if (this.validatePasswords()) {
-      this.userService.registerUser(this.usuario).pipe(
-        tap((respuesta: any) => {
-          console.log('Registro exitoso:', respuesta);
+    // Borra el mensaje de error antes de validar
+    this.errorMessage = '';
 
-          // Verifica si la respuesta indica un registro exitoso
-          if (respuesta && respuesta.message === 'Usuario registrado exitosamente.') {
-            this.registroExitoso = true;
-            this.router.navigate(['/inicio-sesion']);
-          } else {
-            // Mostrar mensaje de error genérico si la respuesta no es la esperada
-            this.errorMessage = 'Error en el registro: Registro no exitoso';
-            console.error(this.errorMessage);
-          }
-        }),
-        catchError((error: any) => {
-          // Manejar diferentes tipos de errores y mostrar mensajes de error específicos
-          if (error.status === 409) {
-            this.errorMessage = 'Error en el registro: El correo electrónico ya está en uso.';
-          } else if (error.status === 400 && error.error && error.error.message === 'Passwords no coinciden') {
-            this.errorMessage = 'Error en el registro: Las contraseñas no coinciden.';
-          } else {
-            this.errorMessage = 'Error en el registro: ' + error.message;
-          }
-          console.error(this.errorMessage);
-          // Devuelve un observable vacío para evitar errores en la cadena
-          return of(null);
-        })
-      ).subscribe();
+    // Verifica que todos los campos estén llenos y que las contraseñas coincidan
+    if (!this.usuario.nombre || !this.usuario.correo || !this.usuario.password || !this.confirmPassword) {
+      this.errorMessage = 'Por favor, completa todos los campos.';
+      return;
     }
+
+    // Verifica si el correo electrónico tiene un formato válido
+    if (!this.validateEmail(this.usuario.correo)) {
+      this.errorMessage = 'Por favor, introduce un correo electrónico válido.';
+      return;
+    }
+
+    // Verifica que las contraseñas coincidan
+    if (!this.validatePasswords()) {
+      return;
+    }
+
+    // Registro de usuario
+    this.userService.registerUser(this.usuario).pipe(
+      tap((respuesta: any) => {
+        console.log('Registro exitoso:', respuesta);
+
+        if (respuesta && respuesta.message === 'Usuario registrado exitosamente.') {
+          this.registroExitoso = true;
+          this.router.navigate(['/inicio-sesion']);
+        } else {
+          this.errorMessage = 'Error en el registro: Registro no exitoso';
+          console.error(this.errorMessage);
+        }
+      }),
+      catchError((error: any) => {
+        if (error.status === 409) {
+          this.errorMessage = 'Error en el registro: El correo electrónico ya está en uso.';
+        } else if (error.status === 400 && error.error && error.error.message === 'Passwords no coinciden') {
+          this.errorMessage = 'Error en el registro: Las contraseñas no coinciden.';
+        } else {
+          this.errorMessage = 'Error en el registro: ' + error.message;
+        }
+        console.error(this.errorMessage);
+        return of(null);
+      })
+    ).subscribe();
+  }
+
+  validateEmail(email: string): boolean {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const isValid = emailRegex.test(email);
+    if (isValid) {
+      this.errorMessage = ''; // Si es válido, borra el mensaje de error
+    }
+    return isValid;
   }
 
   validatePasswords(): boolean {
     if (this.usuario.password !== this.confirmPassword) {
-      this.passwordsMismatch = true; // Establecer la bandera de contraseñas no coinciden
-      return false; // Indicar que las contraseñas no coinciden
+      this.passwordsMismatch = true;
+      return false;
     } else {
-      this.passwordsMismatch = false; // Las contraseñas coinciden, restablecer la bandera
-      return true; // Indicar que las contraseñas coinciden
+      this.passwordsMismatch = false;
+      return true;
     }
   }
-
 }

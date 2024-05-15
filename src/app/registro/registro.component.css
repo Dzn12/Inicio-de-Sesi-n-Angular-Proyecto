@@ -7,71 +7,100 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative; /* Necesario para que el z-index funcione correctamente */
+  overflow: hidden; /* Para evitar que el filtro se aplique a los elementos hijos */
 }
 
-.form-container {
-  background-color: rgba(0, 0, 0, 0.5);
-  /* Cambia el valor de la opacidad según sea necesario */
-  padding: 80px;
-  border-radius: 10px;
+.registro-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px) brightness(95%);
+}
+
+h3 {
+  color: white; /* Color del texto blanco */
+  font-size: 24px; /* Tamaño de letra de 24px */
+}
+
+h4 {
+  margin-top: 10px;
+  color: white; /* Color del texto blanco */
+  font-size: 16px; /* Tamaño de letra de 24px */
   text-align: left;
-  /* Justifica el contenido del formulario a la izquierda */
+}
+
+p{
+  font-weight: bold;
+  color: rgb(214, 75, 75); /* Color del texto blanco */
+  font-size: 17px; /* Tamaño de letra de 24px */
+}
+.form-container {
+  width: 370px;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative; /* Para que los elementos dentro de este div no se vean afectados por el filtro */
+  z-index: 1; /* Asegurarse de que el formulario esté por encima del fondo */
+  background: rgba(82, 134, 128, 0.3); /* Color de fondo similar al del login */
+  border: 1px solid #2a2a2a; /* Borde similar al del login */
+  color: #ffffff; /* Texto blanco */
 }
 
 .form-container img {
-  width: 100px;
+  width: 230px;
   margin-bottom: 20px;
 }
 
-.registro-container {
-  display: flexbox;
-  justify-content: center;
-  /* Centrar horizontalmente */
-  align-items: center;
-  /* Centrar verticalmente */
-  height: 100vh;
-  /* Altura total de la ventana */
-  background-color: rgb(0, 0, 0);
-  /* Fondo oscuro */
-}
-
 .form-overlay {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  color: rgb(36, 45, 52)
-}
-
-.form-container {
-  padding: 10px;
-  color: black;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  /* Color de fondo del formulario */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(252, 249, 249, 1);
-  /* Sombra */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  color: rgb(36, 45, 52);
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 label {
-  color: rgb(240, 233, 233);
-  /* Color de texto para los labels */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold;
 }
 
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="password"] {
   width: 100%;
-  padding: 0px;
+  padding: 10px;
+  border: none;
   margin-bottom: 10px;
   border-radius: 5px;
+  background-color: #222; /* Fondo negro similar al del login */
+  color: #ffffff; /* Letras blancas */
+  transition: border-color 0.3s;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  background-color: #0d6efd; /* Color de fondo similar al del login */
+  color: white; /* Texto blanco */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0a58ca; /* Color de fondo similar al del login */
 }

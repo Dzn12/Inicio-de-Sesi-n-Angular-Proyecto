@@ -23,7 +23,7 @@ align-items: center;
 }
 
 .imagen {
-margin-left: 150px;
+margin-left: 190px;
 margin-right: 20px;
 }
 
@@ -408,7 +408,14 @@ height: 300px;
 width: 200px;
 }
 
-
+  .cuatromage1{
+    width: 200px;
+    height: 298px;
+    margin-top: 45px;
+    transition: transform 0.3s ease;
+    }
+   
+ 
 
 .conimagetop1{
 margin-top: 45px;

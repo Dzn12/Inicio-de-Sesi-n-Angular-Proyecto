@@ -6,37 +6,37 @@
     justify-content: space-between;
     align-items: center;
   }
-  
-  
+ 
+ 
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
   }
-  
-  
-  
+ 
+ 
+ 
   .left-section {
   display: flex;
   align-items: center;
   }
-  
+ 
   .imagen {
-  margin-left: 150px;
+  margin-left: 10px;
   margin-right: 20px;
   }
-  
+ 
   .imagen img {
   max-width: 200px; /* Ajustar el tamaño de la imagen según sea necesario */
   height: auto;
-  margin-left: 290px;
+  margin-left: 350px;
   }
-  
+ 
   .dropdown {
   margin-right: 40px;
   }
-  
+ 
   .dropdown a {
   text-decoration: none;
   color: #333;
@@ -47,18 +47,18 @@
   border-radius: 10px;
   transition: background-color 0.3s ease-in-out;
   }
-  
+ 
   .dropdown a:hover {
   background-color: #f2f2f2;
   color: #007bff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
-  
+ 
   .right-section {
   display: flex;
   align-items: center;
   }
-  
+ 
   .search input {
     margin-right: 60px;
     padding: 12px; /* Aumentar el relleno para un aspecto más equilibrado */
@@ -74,7 +74,7 @@
     border-color: #0056b3; /* Cambiar el color del borde cuando el campo de búsqueda está enfocado */
     outline: none; /* Eliminar el contorno predeterminado */
   }
-  
+ 
   .sign-in button {
   padding: 10px 20px;
   background-color: #fefefe;
@@ -88,18 +88,18 @@
   transition: background-color 0.3s ease-in-out;
   margin-left: 30px;
   }
-  
+ 
   .sign-in button:hover {
   background-color: #ced3d8;
   }
-  
-  
+ 
+ 
   /* Menú desplegable */
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+ 
   .dropdown-content {
     display: none;
     position: absolute;
@@ -110,7 +110,7 @@
     z-index: 1;
     border-radius: 8px;
   }
-  
+ 
   /* Estilos de los enlaces del menú */
   .dropdown-content a {
     color: #333; /* Color del texto */
@@ -119,23 +119,23 @@
     display: block;
     transition: background-color 0.3s ease; /* Transición suave */
   }
-  
+ 
   /* Cambiar color de fondo al pasar el ratón sobre los enlaces */
   .dropdown-content a:hover {
     background-color: #f5f5f5; /* Color de fondo al pasar el ratón */
   }
-  
+ 
   /* Mostrar el menú desplegable cuando se pasa el ratón sobre el elemento padre */
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
-  
+ 
+ 
   /* Estilos para los submenús */
   .dropdown-content .submenu {
     position: relative;
   }
-  
+ 
   .dropdown-content .submenu-content {
     display: none;
     position: absolute;
@@ -147,12 +147,12 @@
     z-index: 1;
     border-radius: 8px;
   }
-  
+ 
   .dropdown-content .submenu:hover .submenu-content {
     display: block;
   }
-  
-  
+ 
+ 
   .submenu-content1 {
     display: none;
     position: absolute;
@@ -167,8 +167,8 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
   }
-  
-  
+ 
+ 
   /* Estilos personalizados para hr */
   hr {
     border: none; /* Elimina el borde predeterminado */
@@ -176,156 +176,158 @@
     background-color: rgb(218, 217, 217); /* Color de la línea */
     margin-top: 10px;
   }
-  
-  
-  
+ 
+ 
+ 
   h3{
     margin-top: 30px;
     margin-left: 685px;
   }
    
-  
+ 
   .hr-10 {
     border: none; /* Elimina el borde predeterminado */
     height: 1.8px; /* Grosor de la línea */
     background-color: rgb(218, 217, 217); /* Color de la línea */
     margin-top: -5px;
   }
-  
-  
-  
-  
-  
+ 
+ 
+ 
+ 
+ 
   .principal{
-  width: 95%;
+  width: 100%;
   }
-  
+ 
   .title1 {
   width: 100%;
   margin-left: 305px;
   margin-bottom: 20px; /* Agrega espacio inferior para la primera sección */
   }
-  
+ 
   .title2 {
   width: 100%;
   margin-left: 10px;
   }
-  
-  
-  
-  
-  
-  
+ 
+ 
+ 
+ 
+ 
+ 
   .wrapper {
+    max-width: 95%;
+    overflow: hidden;
   margin-top: -15px;
   display: flex;
   justify-content: space-between; /* Distribuir los elementos horizontalmente */
   }
-  
+ 
   .custom-slide-container {
   flex: 1; /* El carrusel tomará la mitad del espacio disponible */
   margin-right: 10px; /* Añade un poco de espacio entre los contenedores */
   }
-  
+ 
   .container-10 {
   flex: 1; /* El contenedor 10 tomará la otra mitad del espacio disponible */
   margin-left: 10px; /* Añade un poco de espacio entre los contenedores */
   }
-  
+ 
   .custom-carousel {
   margin-top: 30px;
   width: 59%; /* Ancho del carrusel */
   margin-left: 290px;
   }
-  
+ 
   .custom-slide {
   border-radius: 10px; /* Borde redondeado para cada diapositiva */
   }
-  
+ 
   .custom-slide-image {
   width: 100%; /* Ancho al 100% del contenedor */
   height: auto; /* Altura ajustada automáticamente */
   border-radius: 10px; /* Borde redondeado */
   }
-  
+ 
   .custom-link {
   color: black; /* Cambia el color del texto a negro */
   text-decoration: none; /* Quita el subrayado */
   }
-  
+ 
   .inner-container {
   display: flex;
   align-items: center; /* Centra verticalmente los elementos */
   justify-content: space-between; /* Distribuye el espacio entre los elementos */
   }
-  
+ 
   .webnovel-text {
   flex: 1; /* El texto ocupará todo el espacio disponible */
   margin-right: 30px;
   margin-top: -20px;
   }
-  
+ 
   .webnovel-image {
   border-radius: 8px;
   max-width: 150px; /* Define un ancho máximo para la imagen */
   height: auto; /* La altura se ajustará automáticamente */
   margin-right: 223px; /* Añade un margen a la izquierda para separar la imagen del texto */
   }
-  
+ 
   .webnovel-text {
   height: 75px;
   width: 374px;
   }
-  
-  
+ 
+ 
   .webnovel-item{
   margin-top: 30px;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   .container {
   max-width: 70%;
   margin-left: 260px;
   padding: 20px;
   }
-  
+ 
   .carousel {
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
   }
-  
+ 
   .slides {
   display: flex;
   transition: transform 0.5s ease; /* Efecto de transición al cambiar de slide */
   }
-  
+ 
   .slide {
   flex: 0 0 33.33%; /* Para que cada imagen ocupe un tercio del ancho */
   padding: 0 10px;
   }
-  
+ 
   .carousel-image {
   width: 280px;
   height: auto;
   border-radius: 5px; /* Bordes redondeados */
   }
-  
-  
+ 
+ 
   .prev,
   .next {
   position: absolute;
@@ -339,76 +341,76 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   }
-  
+ 
   .prev:hover,
   .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
   }
-  
+ 
   .prev {
   left: 0;
   }
-  
+ 
   .next {
   right: 0;
   }
-  
-  
-  
-  
-  
+ 
+ 
+ 
+ 
+ 
   .title3{
   text-align: center;
   }
-  
-  
-  
-  
-  
+ 
+ 
+ 
+ 
+ 
   .conimage {
   display: flex; /* Hace que los elementos estén en una fila */
   justify-content: center; /* Centra los elementos horizontalmente */
   align-items: center; /* Centra los elementos verticalmente */
   }
-  
+ 
   .conimage img {
   object-fit: cover; /* Escala la imagen para que llene su contenedor sin distorsionarla */
   margin: 0 22px; /* Agrega un margen entre las imágenes */
   border-radius: 10px;
   }
-  
+ 
   .conimagetop{
   margin-top: 35px;
   }
   .conimagetop img:hover {
   transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse sobre ella */
   }
-  
-  
-  
-  
-  
+ 
+ 
+ 
+ 
+ 
   .unomage{
   height: 300px;
   width: 200px;
   }
-  
+ 
   .dosmage{
   width: 200px;
   height: 300px;
   }
-  
+ 
   .tresmage{
   width: 200px;
   height: 300px;
   }
-  
+ 
   .cuatromage{
   width: 200px;
   }
-  
-  
-  
+ 
+ 
+ 
   .conimagetop1{
   margin-top: 45px;
   }
@@ -421,15 +423,15 @@
   .conimagetop2 img:hover {
   transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el mouse sobre ella */
   }
-  
-  
-  
-  
+ 
+ 
+ 
+ 
   .conimagetop3{
   margin-top: 45px;
   transition: transform 0.3s ease;
   }
-  
+ 
   .conimage img:hover {
   /*border: 2px solid #ff9900; /* Color del borde */
   box-shadow: 0 0 15px #5c6b78, 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra principal y difuminado adicional */
@@ -437,92 +439,94 @@
   opacity: 0.9; /* Opacidad al pasar el mouse */
   transition: 0.5s ease-in-out; /* Duración y tipo de transición */
   }
-  
+ 
   .conimage img:not(:hover) {
   transform: scale(1); /* Revertir la transformación al quitar el mouse */
   box-shadow: none; /* Eliminar la sombra */
   opacity: 1; /* Revertir la opacidad */
   transition: transform 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease; /* Agrega la transición para transform, box-shadow y opacity */
-  
+ 
   }
-  
-  
+ 
+ 
   .cuatromage1{
     width: 200px;
     height: 298px;
     margin-top: 45px;
     transition: transform 0.3s ease;
     }
-    
-  
-  
-  
-  
-  
+   
+ 
+ 
+ 
+ 
+ 
   /* Estilo para el pie de página */
   footer {
   background-color: #333;
   padding: 10px 0;
   margin-top: 60px;
   }
-  
+ 
   /* Estilo para el logotipo del pie de página */
   .footer-logo {
   margin-left: 90px;
   max-width: 150px;
-  filter: brightness(0) invert(1); 
+  filter: brightness(0) invert(1);
   }
-  
+ 
   /* Estilo para los enlaces del pie de página */
   .footer-links {
   padding-left: 0;
   }
-  
+ 
   .footer-links li {
   margin-top: 10px;
   display: inline-block;
   margin-right: 70px;
   }
-  
+ 
   .footer-links li:last-child {
   margin-right: 0;
   }
-  
+ 
   .footer-links a {
   color: #fff;;
   text-decoration: none;
   font-weight: bold;
   }
-  
+ 
   .footer-links a:hover {
   color: #2389f7;
   }
-  
+ 
   /* Estilo para el texto del pie de página */
   .footer-text {
   color: #fff;
   margin-top: 9px;
   font-size: 16px;
   }
-  
-
-
-
-
-
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 .avatar-btn {
   background-color: transparent; /* Hace que el botón sea transparente */
   border: none; /* Elimina el borde del botón */
   padding: 0; /* Elimina el relleno del botón */
 }
-
+ 
 .avatar-img {
   width: 35px; /* Ajusta el ancho de la imagen */
   height: 35px; /* Ajusta la altura de la imagen */
   border-radius: 50%; /* Hace que la imagen sea redonda */
 }
+ 
+

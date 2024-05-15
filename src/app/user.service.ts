@@ -29,11 +29,19 @@ getObraById(id: number): Observable<Obra> {
   );
   }
 
-
   getGenerosByObraId(id: number): Observable<Genero[]> {
     return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
   }
   
+
+// Método para obtener obras por género
+getObrasByGenero(generoId: number): Observable<Obra[]> {
+  const url = `${this.apiUrl}/generos/${generoId}`; // Endpoint en el backend Symfony
+  return this.http.get<Obra[]>(url);
+}
+
+  
+
 
 // Usuario
 
@@ -66,6 +74,13 @@ getObraById(id: number): Observable<Obra> {
     );
   }
   
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/api/usuarios`).pipe(
+      catchError(this.handleError<User[]>('getUsers', []))
+    );
+  }
+   
+
   
  updateUser(email: string, name: string, pswd: string): Observable<any> {
   const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
@@ -75,18 +90,20 @@ getObraById(id: number): Observable<Obra> {
   );
 }
 
-  deleteUser(userId: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/users/${userId}`).pipe(
-      catchError(this.handleError<any>('deleteUser'))
+deleteUser(userId: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/api/usuarios/${userId}`).pipe(
+    catchError(error => {
+      console.error('Error al eliminar usuario:', error);
+      throw error;
+    })
+  );
+}
+
+  getCapitulo(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
+      catchError(this.handleError<any>('getCapitulo'))
     );
   }
-
-  getCapitulo(id: number): Observable<Capitulo> {
-    return this.http.get<Capitulo>(`${this.apiUrl}/api/capitulos/${id}`).pipe(
-      catchError(this.handleError<Capitulo>('getCapitulo'))
-    );
-  }
-
   
   
   private handleError<T>(operation = 'operation', result?: T) {
