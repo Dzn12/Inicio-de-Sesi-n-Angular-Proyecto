@@ -29,6 +29,7 @@ getObraById(id: number): Observable<Obra> {
   );
   }
 
+
   getGenerosByObraId(id: number): Observable<Genero[]> {
     return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
   }

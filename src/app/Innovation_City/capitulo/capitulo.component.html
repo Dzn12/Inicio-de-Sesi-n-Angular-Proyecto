@@ -1,15 +1,10 @@
 <app-header></app-header>
 <div *ngIf="capitulo">
-    <button class="back-description" [routerLink]="['../book-description']">Back</button>
     <h2 class="titulo">{{ capitulo.titulo }}</h2>
     <div class="contenido"  [innerHTML]="capitulo.contenido"></div>
-    <button class="back-description" [routerLink]="['/book-description/id']">Back</button>
-
-
-    <div class="contenedor-botones">
-        <div class="separador"></div>
-        <button class="boton-siguiente" [routerLink]="['../capitulo2']">Next Chapter</button>
-    </div>
-
+</div>
+<div class="contenedor-botones">
+    <div class="separador"></div>
+    <button class="boton-siguiente" [routerLink]="['../capitulo2']">Next Chapter</button>
 </div>
 <app-footer></app-footer>

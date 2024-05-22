@@ -1,14 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-
+ 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls : ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+ 
   avatarIcon = '../../../assets/Henry.jpg';
-
+ 
   slides = [
     {
       image: '../../../assets/Henry.jpg',
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
     }
     // Agrega más objetos para más diapositivas
   ];
-
+ 
   slidesa = [
     {
       image: '../../../assets/Henry.jpg',
@@ -82,17 +82,19 @@ export class DashboardComponent implements OnInit {
     // Agrega más objetos para más diapositivas
   ];
   currentSlide = 0;
-
+ 
   showMenu: boolean = false;
-  isAdmin: boolean =false;
+  isAdmin: boolean = false;  // Boolean to control admin access
+ 
+ 
   toggleMenu() {
     this.showMenu = !this.showMenu;
   }
-
+ 
   prevSlide() {
     this.currentSlide = Math.max(0, this.currentSlide - 1);
   }
-
+ 
   nextSlide() {
     // Verificar si el índice actual está en la última imagen
     if (this.currentSlide >= this.slidesa.length - 3) {
@@ -103,15 +105,15 @@ export class DashboardComponent implements OnInit {
       this.currentSlide++;
     }
   }
-  
-
+ 
+ 
   ngOnInit() {
-   this.isAdmin = localStorage.getItem('isAdmin') === 'true';
+    this.isAdmin = localStorage.getItem('isAdmin') === 'true';
     setInterval(() => {
       this.nextSlide();
     }, 3000); // 3000 milisegundos = 3 segundos
   }
-
+ 
   goToSlide(index: number) {
     if (index >= this.slidesa.length) {
       this.currentSlide = 0; // Regresar al primer índice si se supera la cantidad de imágenes
@@ -121,20 +123,20 @@ export class DashboardComponent implements OnInit {
   }
  
   @ViewChild('slidesContainer') slidesContainer: ElementRef;
-
+ 
   mouseDownX: number = 0;
   mouseMoveX: number = 0;
   isDragging: boolean = false;
   constructor() {
     this.slidesContainer = new ElementRef(document.createElement('div'));
   }
-
+ 
   onMouseDown(event: MouseEvent) {
     this.isDragging = true;
     this.mouseDownX = event.clientX;
     this.mouseMoveX = 0;
   }
-
+ 
   onMouseMove(event: MouseEvent) {
     if (this.isDragging) {
       this.mouseMoveX = event.clientX - this.mouseDownX;
@@ -144,7 +146,7 @@ export class DashboardComponent implements OnInit {
       this.slidesContainer.nativeElement.style.transform = `translateX(${newTranslateX}%)`;
     }
   }
-
+ 
   onMouseUp() {
     if (this.isDragging) {
       // Determina la dirección del movimiento y ajusta el carrusel según sea necesario
@@ -156,17 +158,17 @@ export class DashboardComponent implements OnInit {
       this.isDragging = false;
     }
   }
-
+ 
   @HostListener('window:mousemove', ['$event'])
   onMouseMoveWindow(event: MouseEvent) {
     this.onMouseMove(event);
   }
-
+ 
   @HostListener('window:mouseup')
   onMouseUpWindow() {
     this.onMouseUp();
   }
-
+ 
   ngOnDestroy() {
     // Eliminar suscriptores de eventos al destruir el componente
     window.removeEventListener('mousemove', this.onMouseMoveWindow);

@@ -1,24 +1,21 @@
+<!-- book-description.component.html -->
 <app-header></app-header>
- 
  
 <div class="contenedor" *ngIf="obra">
   <div class="container">
-  <div class="book-details">
-    <img [src]="obra.rutaImagen" alt="Book Cover" class="book-cover"> <!-- Mostrar la imagen -->
-    <div class="book-info">
-      <h2 class="book-title">{{ obra.titulo }}</h2>
-      <p class="book-introduction">{{ obra.descripcion }}</p>
-      <p class="book-autor">Autor: {{ obra.autor }}</p>
-      <p class="book-genero">Genders:</p>
-      <ul>
-        <li *ngFor="let genero of generos">{{ genero.nombre }}</li>
-      </ul>
+    <div class="book-details">
+      <img [src]="obra.rutaImagen" alt="Book Cover" class="book-cover"> <!-- Mostrar la imagen -->
+      <div class="book-info">
+        <h2 class="book-title">{{ obra.titulo }}</h2>
+        <p class="book-introduction">{{ obra.descripcion }}</p>
+        <p class="book-autor">Autor: {{ obra.autor }}</p>
+        <p class="book-genero">Géneros:</p>
+        <ul>
+          <li *ngFor="let genero of generos">{{ genero.nombre }}</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
- 
- 
- 
 
   <div ngbAccordion class="custom-accordion">
     <div ngbAccordionItem [collapsed]="false" class="accordion-item">
@@ -48,34 +45,23 @@
       </div>
     </div>
   </div>
+ 
   <div class="book-comments">
-    <h3>Añade tu comentario</h3>
+    <h3>Comments</h3>
+    <ul>
+      <li *ngFor="let comentario of comentarios">
+        <span>{{ comentario.usuario }}:</span> {{ comentario.texto }}
+        <span class="fecha">{{ comentario.fecha }}</span>
+      </li>
+    </ul>
+ 
+    <h3>Add your comment</h3>
     <form (ngSubmit)="agregarComentario()">
       <textarea [(ngModel)]="nuevoComentario" name="comentario" placeholder="Enter your comment"></textarea>
       <button type="submit">Add Comment</button>
     </form>
   </div>
  
- 
- 
- 
- <!-- <button class="save-button">Save Book</button>-->
- 
   <app-footer></app-footer>
- 
- 
 </div>
  
- 
-
-
-
-
-
-
-
-
-
-
-
-

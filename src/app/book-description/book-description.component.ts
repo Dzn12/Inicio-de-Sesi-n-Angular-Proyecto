@@ -1,3 +1,4 @@
+// book-description.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../user.service';
@@ -13,6 +14,7 @@ import { ComentarioService } from '../comentario.service';
 export class BookDescriptionComponent implements OnInit {
   obra: Obra | undefined;
   generos: Genero[] = [];
+  comentarios: any[] = [];
   nuevoComentario: string = '';
  
   constructor(
@@ -26,6 +28,7 @@ export class BookDescriptionComponent implements OnInit {
       const id = +params['id'];
       this.loadObraById(id);
       this.loadGenerosByObraId(id);
+      this.loadComentarios(id);
     });
   }
  
@@ -51,6 +54,17 @@ export class BookDescriptionComponent implements OnInit {
     );
   }
  
+  loadComentarios(idObra: number): void {
+    this.comentarioService.obtenerComentarios(idObra).subscribe(
+      (comentarios: any[]) => {
+        this.comentarios = comentarios;
+      },
+      (error) => {
+        console.error('Error al cargar los comentarios:', error);
+      }
+    );
+  }
+ 
   agregarComentario(): void {
     if (this.obra) {
       const idObra = this.obra.id;
@@ -62,6 +76,7 @@ export class BookDescriptionComponent implements OnInit {
         response => {
           console.log('Comentario agregado:', response);
           this.nuevoComentario = '';
+          this.loadComentarios(idObra); // Recargar los comentarios
         },
         error => {
           console.error('Error al agregar comentario:', error);
@@ -70,3 +85,4 @@ export class BookDescriptionComponent implements OnInit {
     }
   }
 }
+ 

@@ -31,7 +31,11 @@ const routes: Routes = [
   {path : 'filter-genders', component: FilterGendersComponent},
   {path : 'popup', component : PopupComponent},
   {path : 'perfil', component : PerfilComponent},
-  {path : 'admin', component : AdministracionComponent}
+  {path : 'admin', component : AdministracionComponent},
+  { path: '', redirectTo: '/filter-genders', pathMatch: 'full' },
+  { path: 'filter-genders', component: FilterGendersComponent },
+  { path: 'book/:id', component: BookDescriptionComponent },
+
 ];
 
 @NgModule({

@@ -25,6 +25,7 @@ import { PopupComponent } from './popup/popup.component';
 import { ComentarioService } from './comentario.service';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AdministracionComponent } from './admin/admin.component';
+
 @NgModule({
   declarations: [
     AppComponent,

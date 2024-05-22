@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Obra } from '../book.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter-genders',
@@ -29,12 +30,16 @@ export class FilterGendersComponent implements OnInit {
     { id: 15, nombre: 'Fiction' }
   ];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.getObrasByGenero();
   }
 
+  goToBookDescription(obraId: number): void {
+    this.router.navigate(['/book', obraId]);
+  }
+  
   getObrasByGenero(): void {
     this.userService.getObrasByGenero(this.generoId).subscribe(
       (obras: Obra[]) => {
