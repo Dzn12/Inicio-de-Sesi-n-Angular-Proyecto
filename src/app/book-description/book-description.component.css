@@ -25,7 +25,7 @@
   }
  
   .book-cover:hover {
-    transform: scale(1.04); /* Aumentar el tamaño al pasar el mouse */
+    transform: scale(1.02); /* Aumentar el tamaño al pasar el mouse */
   }
  
  
@@ -63,11 +63,11 @@
   text-align: justify;
 }
  
-.book-cover{
-width: 300px;
-height: 450px;
-border-radius: 30p;
-}
+  .book-cover{
+  width: 300px;
+  height: 450px;
+  border-radius: 7px;
+  }
  
  
  
@@ -225,3 +225,27 @@ border-radius: 30p;
   .book-comments button:hover {
     background-color: #74b1f3;
   }
+
+
+  .like-button {
+    margin-left: 90px;
+    margin-top: 8px;
+    background-color: #007BFF; /* Azul */
+    border: none;
+    color: white;
+    padding: 10px 20px; /* Ajusta el tamaño del padding */
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Para centrar con margin auto */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Suaviza la transición */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .like-button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+    color: white; /* Mantener el texto blanco */
+    border: 2px solid #0056b3; /* Borde del mismo color */
+  }
+  

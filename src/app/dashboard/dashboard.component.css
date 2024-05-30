@@ -527,6 +527,7 @@
   width: 35px; /* Ajusta el ancho de la imagen */
   height: 35px; /* Ajusta la altura de la imagen */
   border-radius: 50%; /* Hace que la imagen sea redonda */
+  margin-left: 50px;
 }
  
 

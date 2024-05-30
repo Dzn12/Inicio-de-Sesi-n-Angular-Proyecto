@@ -5,6 +5,7 @@ import { UserService } from '../user.service';
 import { Obra } from '../book.model';
 import { Genero } from '../genero.model';
 import { ComentarioService } from '../comentario.service';
+import { FavoritoService } from '../favorito.service';
  
 @Component({
   selector: 'app-book-description',
@@ -20,7 +21,8 @@ export class BookDescriptionComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
-    private comentarioService: ComentarioService
+    private comentarioService: ComentarioService,
+    private favoritoService: FavoritoService
   ) { }
  
   ngOnInit(): void {
@@ -84,5 +86,23 @@ export class BookDescriptionComponent implements OnInit {
       );
     }
   }
+  agregarFavorito(): void {
+    if (this.obra) {
+      const idObra = this.obra.id;
+      const IdUsuario = Number(localStorage.getItem('userId'));
+   
+      this.favoritoService.agregarFavorito(idObra, IdUsuario).subscribe(
+        response => {
+          console.log('Obra agregada a favoritos:', response);
+          alert('Obra agregada a favoritos');
+        },
+        error => {
+          console.error('Error al agregar a favoritos:', error);
+          alert('Error al agregar a favoritos');
+        }
+      );
+    }
+  }
 }
+ 
  

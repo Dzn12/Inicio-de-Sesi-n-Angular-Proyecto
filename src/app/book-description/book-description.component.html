@@ -1,3 +1,4 @@
+
 <!-- book-description.component.html -->
 <app-header></app-header>
  
@@ -15,8 +16,13 @@
         </ul>
       </div>
     </div>
+ 
+    <div>
+      <button class="like-button" (click)="agregarFavorito()">I like it!</button>
+    </div>
   </div>
 
+  
   <div ngbAccordion class="custom-accordion">
     <div ngbAccordionItem [collapsed]="false" class="accordion-item">
       <h2 ngbAccordionHeader class="accordion-header">

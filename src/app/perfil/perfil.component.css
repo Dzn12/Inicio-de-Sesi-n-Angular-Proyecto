@@ -1,45 +1,74 @@
 /* Estilo general para el contenedor del perfil */
 .perfil-info {
-    width: 400px; /* Ajusta el ancho según tus necesidades */
-    margin: 60px auto; /* Centra el contenedor horizontalmente y añade margen superior e inferior */
-    background-color: #f0f0f0; /* Fondo gris claro */
-    border-radius: 10px; /* Redondea las esquinas más */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más definida */
-    padding: 30px; /* Aumenta el espacio interno */
-  }
-  
-  /* Estilo para el título */
-  .perfil-info h2 {
-    text-align: center;
-    color: #333; /* Texto gris oscuro */
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo para los campos */
-  .field {
-    margin-bottom: 20px;
-  }
-  
-  /* Estilo para las etiquetas */
-  .field label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #666; /* Texto gris claro */
-  }
-  
-  /* Estilo para los valores */
-  .field div {
-    background-color: #fff; /* Fondo blanco */
-    padding: 12px; /* Aumenta el espacio interno */
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 5px; /* Redondea las esquinas de los valores */
-  }
-  
-
-  app-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%; /* Ajusta el ancho según tus necesidades */
-  }
-  
+  width: 400px; /* Ajusta el ancho según tus necesidades */
+  margin: 60px auto; /* Centra el contenedor horizontalmente y añade margen superior e inferior */
+  background-color: #f0f0f0; /* Fondo gris claro */
+  border-radius: 10px; /* Redondea las esquinas más */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más definida */
+  padding: 30px; /* Aumenta el espacio interno */
+}
+ 
+/* Estilo para el título */
+.perfil-info h2 {
+  text-align: center;
+  color: #333; /* Texto gris oscuro */
+  margin-bottom: 20px;
+}
+ 
+/* Estilo para los campos */
+.field {
+  margin-bottom: 20px;
+}
+ 
+/* Estilo para las etiquetas */
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #666; /* Texto gris claro */
+}
+ 
+/* Estilo para los valores */
+.field div {
+  background-color: #fff; /* Fondo blanco */
+  padding: 12px; /* Aumenta el espacio interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Redondea las esquinas de los valores */
+}
+ 
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /* Espacio entre los elementos */
+}
+ 
+.obra-item {
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Borde opcional */
+  border-radius: 8px; /* Borde redondeado opcional */
+  padding: 16px; /* Espacio interno */
+  text-align: center; /* Centrar el texto */
+}
+ 
+.obra-item img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 8px; /* Borde redondeado opcional para la imagen */
+}
+ 
+.favoritos-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+gap: 16px;
+}
+ 
+.obra-item {
+flex: 1 1 calc(33.333% - 16px);
+box-sizing: border-box;
+margin-bottom: 16px;
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 16px
+}
+ 

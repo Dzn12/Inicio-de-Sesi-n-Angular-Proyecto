@@ -1,4 +1,3 @@
-
 <div class="containerone">
   <header>
     <div class="left-section">
@@ -28,14 +27,14 @@
     </div>
     <div class="right-section">
       <div class="search">
-        <input type="text" placeholder="Search">
+        <app-search-box></app-search-box>
       </div>
-      
+     
       <div class="dropdown">
         <button id="avatar-btn" aria-haspopup="true" class="avatar-btn" aria-label="Menú de la cuenta" (click)="toggleMenu()">
           <img id="avatar-img" draggable="false" class="avatar-img" alt="Icono de perfil" [src]="avatarIcon" >
         </button>
-      
+     
         <div *ngIf="showMenu" class="dropdown-content">
           <a [routerLink]="'/perfil'">Profile</a>
           <a [routerLink]="'/update'">Update User </a>
@@ -43,7 +42,7 @@
           <a [routerLink]="'/bienvenido'">Sign Out</a>
         </div>
       </div>
-
+ 
     </div>
   </header>
   <hr/>

@@ -1,0 +1,79 @@
+/* contact.component.css */
+.contact-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+  }
+   
+  .header {
+    text-align: center;
+  }
+   
+  .logo {
+    width: 150px;
+  }
+   
+  h1 {
+    font-family:  sans-serif;
+    margin: 20px 0;
+  }
+   
+  hr {
+    margin: 20px 0;
+  }
+   
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+   
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+   
+  .form-control {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+   
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+   
+  .social-media {
+    display: flex;
+    gap: 10px; /* Espacio entre los íconos */
+    align-items: center; /* Centrar verticalmente */
+  }
+   
+  .social-media img {
+    width: 40px;
+    height: 40px; /* Aseguramos que todas las imágenes tengan la misma altura */
+  }
+   
+  .details {
+    text-align: right;
+  }
+   
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* Botón a lo ancho del formulario */
+    text-align: center;
+  }
+   
+  .btn:hover {
+    background-color: #0056b3;
+  }

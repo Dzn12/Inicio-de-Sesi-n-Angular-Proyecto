@@ -1,8 +1,7 @@
 
 <app-header></app-header>
 
- 
- <h2>Books by genre:</h2>
+<h2>Books by genre:</h2>
 
 <div class="filter-container"> 
   <label for="genero">Select a genre:</label>
@@ -12,9 +11,10 @@
   <button (click)="getObrasByGenero()">Buscar</button>
 </div>
 
-<div class="result-container" *ngIf="obras.length > 0">
-
-  <div class="obra-row">
+<div class="result-container">
+  <!-- Mensaje con el número de libros encontrados -->
+  <p *ngIf="obrasCount > 0">Se encontraron {{ obrasCount }} libro(s).</p>
+  <div class="obra-row" *ngIf="obras.length > 0">
     <div class="obra-column" *ngFor="let obra of obras" (click)="goToBookDescription(obra.id)">
       <h4>{{ obra.titulo }}</h4>
       <div class="obra-details">
@@ -22,18 +22,11 @@
         <p><strong>Descripción:</strong> {{ obra.descripcion }}</p>
       </div>
     </div>
-    
   </div>
   <div class="no-results" *ngIf="obras.length === 0">
-  <p>No se encontraron obras para este género.</p>
+    <p>No se encontraron obras para este género.</p>
+  </div>
 </div>
-
-</div>
-
-
-
-
-
 
 <app-footer></app-footer>
 

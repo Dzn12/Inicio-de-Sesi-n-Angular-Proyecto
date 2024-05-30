@@ -25,6 +25,9 @@ import { PopupComponent } from './popup/popup.component';
 import { ComentarioService } from './comentario.service';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AdministracionComponent } from './admin/admin.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
+import { SearchBoxComponent } from './search-box/search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { AdministracionComponent } from './admin/admin.component';
     FilterGendersComponent,
     PopupComponent,
     PerfilComponent,
-    AdministracionComponent
+    AdministracionComponent,
+    AboutUsComponent,
+    ContactComponent,
+    SearchBoxComponent
   ],
   imports: [
     AccordionModule.forRoot(),

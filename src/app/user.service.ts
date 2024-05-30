@@ -23,17 +23,24 @@ export class UserService {
 
 // Obra
 
-getObraById(id: number): Observable<Obra> {
-  return this.http.get<Obra>(`${this.apiUrl}/api/obra/${id}`).pipe(
-    catchError(this.handleError<Obra>('getObraById'))
-  );
-  }
+  getObraById(id: number): Observable<Obra> {
+    return this.http.get<Obra>(`${this.apiUrl}/api/obra/${id}`).pipe(
+      catchError(this.handleError<Obra>('getObraById'))
+    );
+    }
 
 
   getGenerosByObraId(id: number): Observable<Genero[]> {
     return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
   }
   
+
+  // Método para buscar libros por título
+  searchBooksByTitle(titulo: string): Observable<Obra[]> {
+    const url = `${this.apiUrl}/obra/busqueda/${titulo}`;
+    return this.http.get<Obra[]>(url);
+  }
+
 
 // Método para obtener obras por género
 getObrasByGenero(generoId: number): Observable<Obra[]> {

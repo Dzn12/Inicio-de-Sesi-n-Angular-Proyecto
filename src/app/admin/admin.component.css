@@ -59,3 +59,24 @@
     width: 100%; /* Ajusta el ancho según tus necesidades */
   }
   
+
+  .success-message {
+    color: #fff; /* Color del texto */
+    background-color: #28a745; /* Color de fondo */
+    font-weight: bold;
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 10px 0;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    border: 1px solid #28a745; /* Borde */
+    transition: opacity 0.5s ease-in-out; /* Transición suave */
+    opacity: 0; /* Inicialmente invisible */
+    animation: fadeIn 0.5s forwards; /* Animación para aparecer */
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  

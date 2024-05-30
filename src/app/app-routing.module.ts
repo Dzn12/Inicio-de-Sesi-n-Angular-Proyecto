@@ -16,6 +16,9 @@ import { FilterGendersComponent } from './filter-genders/filter-genders.componen
 import { PopupComponent } from './popup/popup.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AdministracionComponent } from './admin/admin.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
+import { SearchBoxComponent } from './search-box/search-box/search-box.component';
 const routes: Routes = [
   { path: '', component: BienvenidoComponent }, // Ruta principal
   { path: 'registro', component: RegistroComponent },
@@ -35,7 +38,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/filter-genders', pathMatch: 'full' },
   { path: 'filter-genders', component: FilterGendersComponent },
   { path: 'book/:id', component: BookDescriptionComponent },
-
+  { path: 'about-us', component: AboutUsComponent },
+  {path: 'contact', component: ContactComponent},
+  { path: 'search-box', component: SearchBoxComponent },
 ];
 
 @NgModule({

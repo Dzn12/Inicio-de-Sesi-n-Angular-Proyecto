@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class FilterGendersComponent implements OnInit {
   obras: Obra[] = [];
   generoId: number = 1; // ID del género "Action" por defecto
+  obrasCount: number = 0; // Propiedad para contar las obras encontradas
 
   generosDisponibles: { id: number, nombre: string }[] = [
     { id: 1, nombre: 'Action' },
@@ -44,6 +45,7 @@ export class FilterGendersComponent implements OnInit {
     this.userService.getObrasByGenero(this.generoId).subscribe(
       (obras: Obra[]) => {
         this.obras = obras;
+        this.obrasCount = obras.length; // Actualiza el conteo de obras
       },
       (error) => {
         console.error('Error al obtener las obras por género:', error);
