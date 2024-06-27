@@ -1,24 +1,24 @@
 <app-header></app-header>
- 
- 
+
 <div class="contenedor" *ngIf="obra">
   <div class="container">
-  <div class="book-details">
-    <img [src]="obra.rutaImagen" alt="Book Cover" class="book-cover"> <!-- Mostrar la imagen -->
-    <div class="book-info">
-      <h2 class="book-title">{{ obra.titulo }}</h2>
-      <p class="book-introduction">{{ obra.descripcion }}</p>
-      <p class="book-autor">Autor: {{ obra.autor }}</p>
-      <p class="book-genero">Genders:</p>
-      <ul>
-        <li *ngFor="let genero of generos">{{ genero.nombre }}</li>
-      </ul>
+    <div class="book-details">
+      <img [src]="obra.rutaImagen" alt="Book Cover" class="book-cover" />
+      <!-- Mostrar la imagen -->
+      <div class="book-info">
+        <h2 class="book-title">{{ obra.titulo }}</h2>
+        <p class="book-introduction">{{ obra.descripcion }}</p>
+        <p class="book-autor">Autor: {{ obra.autor }}</p>
+        <p class="book-genero">Genders:</p>
+        <ul>
+          <li *ngFor="let genero of generos">{{ genero.nombre }}</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <button (click)="agregarFavorito()">I like it!</button>
     </div>
   </div>
-</div>
- 
- 
- 
 
   <div ngbAccordion class="custom-accordion">
     <div ngbAccordionItem [collapsed]="false" class="accordion-item">
@@ -30,18 +30,23 @@
           <ng-template>
             <div>
               <a [routerLink]="['/Innovation_City/capitulo']">
-                Chapther 1-
-              <p class="chapter-title">The Beginning of the Adventure</p></a><hr>
+                Chapter 1-
+                <p class="chapter-title">The Beginning of the Adventure</p></a
+              >
+              <hr />
             </div>
             <div>
               <a [routerLink]="['/Innovation_City/capitulo2']">
-              Chapther 2-
-              <p class="chapter-title">The Last Soldier of the Kingdom</p></a><hr>
+                Chapter 2-
+                <p class="chapter-title">The Last Soldier of the Kingdom</p></a
+              >
+              <hr />
             </div>
             <div>
               <a [routerLink]="['/Innovation_City/capitulo3']">
-              Chapther 3-
-              <p class="chapter-title">High Tide</p></a>
+                Chapter 3-
+                <p class="chapter-title">High Tide</p></a
+              >
             </div>
           </ng-template>
         </div>
@@ -51,31 +56,14 @@
   <div class="book-comments">
     <h3>Añade tu comentario</h3>
     <form (ngSubmit)="agregarComentario()">
-      <textarea [(ngModel)]="nuevoComentario" name="comentario" placeholder="Enter your comment"></textarea>
+      <textarea
+        [(ngModel)]="nuevoComentario"
+        name="comentario"
+        placeholder="Enter your comment"
+      ></textarea>
       <button type="submit">Add Comment</button>
     </form>
   </div>
- 
- 
- 
- 
- <!-- <button class="save-button">Save Book</button>-->
- 
+
   <app-footer></app-footer>
- 
- 
 </div>
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-

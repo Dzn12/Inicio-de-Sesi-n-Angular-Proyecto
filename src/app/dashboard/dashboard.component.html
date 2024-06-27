@@ -27,14 +27,14 @@
       </div>
       <div class="right-section">
         <div class="search">
-          <input type="text" placeholder="Search">
+          <app-search-box></app-search-box>
         </div>
-        
+
         <div class="dropdown">
           <button id="avatar-btn" aria-haspopup="true" class="avatar-btn" aria-label="Menú de la cuenta" (click)="toggleMenu()">
             <img id="avatar-img" draggable="false" class="avatar-img" alt="Icono de perfil" [src]="avatarIcon" >
           </button>
-        
+
           <div *ngIf="showMenu" class="dropdown-content">
             <a [routerLink]="'/perfil'">Profile</a>
             <a [routerLink]="'/update'">Update User </a>
@@ -57,7 +57,7 @@
             <ng-template ngbSlide *ngFor="let slide of slides">
               <img [src]="slide.image" alt="{{ slide.title }}" class="custom-slide-image">
               <div class="carousel-caption">
-                <h3>{{ slide.title }}</h3> 
+                <h3>{{ slide.title }}</h3>
                 <!-- <p>{{ slide.description }}</p> -->
               </div>
             </ng-template>
@@ -95,25 +95,25 @@
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   <hr class="hr-1">
-  
+
   <div class="title3">
     <h4>Weekly Novels</h4>
   </div>
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   <div class="container">
     <div class="carousel">
       <div class="slides" [style.transform]="'translateX(-' + currentSlide * (330 / slidesa.length) + '%)'"
@@ -127,17 +127,17 @@
       </div>
     </div>
   </div>
-  
-  
-  
-  
+
+
+
+
   <hr class="hr-10">
   <div class="title3">
     <h4>Books and Novels</h4>
   </div>
 
 
-  
+
   <div class="conimage">
     <div class="conimagetop">
       <a [routerLink]="['/book-description', 1]">
@@ -154,8 +154,8 @@
       </a>
     </div>
   </div>
-  
-  
+
+
   <div class="conimage">
     <div class="conimagetop1">
       <a [routerLink]="['/book-description', 5]">
@@ -166,19 +166,19 @@
     </a>
     <a [routerLink]="['/book-description', 7]">
       <img src="../../assets/11 (1).jpg" alt="3" class="tresmage">
-    </a> 
+    </a>
     <a [routerLink]="['/book-description', 8]">
       <img src="../../assets/12 (1).jpg" alt="4" class="cuatromage">
-    </a>   
+    </a>
     </div>
   </div>
-  
-  
+
+
   <div class="conimage">
     <div class="conimagetop2">
       <a [routerLink]="['/book-description', 9]">
       <img src="../../assets/5 (1).jpg" alt="1" class="unomage">
-      </a> 
+      </a>
       <a [routerLink]="['/book-description', 10]">
       <img src="../../assets/6 (1).jpg" alt="2" class="dosmage">
       </a>
@@ -190,8 +190,8 @@
     </a>
     </div>
   </div>
-  
-  
+
+
   <div class="conimage">
     <div class="conimagetop3">
       <a [routerLink]="['/book-description', 13]">
@@ -205,13 +205,13 @@
     </a>
     <a [routerLink]="['/book-description', 16]">
       <img src="../../assets/16 (1).jpg" alt="4" class="cuatromage">
-    </a>    
+    </a>
     </div>
   </div>
-  
-  
-  
+
+
+
 <!-- En el HTML de otro componente -->
 
-  
+
 <app-footer></app-footer>

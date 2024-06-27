@@ -16,13 +16,15 @@ import { FilterGendersComponent } from './filter-genders/filter-genders.componen
 import { PopupComponent } from './popup/popup.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { AdministracionComponent } from './admin/admin.component';
+import { SearchBoxComponent } from './search-box/search-box/search-box.component';
+
 const routes: Routes = [
   { path: '', component: BienvenidoComponent }, // Ruta principal
   { path: 'registro', component: RegistroComponent },
   { path: 'inicio-sesion', component: InicioSesionComponent },
-  { path: 'dashboard', component: DashboardComponent }, 
-  { path: 'bienvenido', component: BienvenidoComponent }, 
-  { path: 'update', component: UpdateComponent }, 
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'bienvenido', component: BienvenidoComponent },
+  { path: 'update', component: UpdateComponent },
   { path: 'book-description/:id', component: BookDescriptionComponent },
   { path: 'Innovation_City/capitulo', component: CapituloComponent },
   { path: 'Innovation_City/capitulo2', component: Capitulo2Component },
@@ -31,7 +33,8 @@ const routes: Routes = [
   {path : 'filter-genders', component: FilterGendersComponent},
   {path : 'popup', component : PopupComponent},
   {path : 'perfil', component : PerfilComponent},
-  {path : 'admin', component : AdministracionComponent}
+  {path : 'admin', component : AdministracionComponent},
+  { path: 'search-box', component: SearchBoxComponent },
 ];
 
 @NgModule({

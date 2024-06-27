@@ -10,6 +10,7 @@ import { Capitulo } from './capitulo.model';
 import { Obra } from './book.model';
 import { Genero } from './genero.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,23 +19,31 @@ export class UserService {
   //private apiUrl = 'http://10.118.3.18:8000'; //Alejandro
   //private apiUrl = 'http://127.0.0.1:8000';
   private apiUrl =""; //personal
-  private tokenKey = 'authToken'; // Define una clave para el token en el localStorage
+  private tokenKey = 'authToken'; //Define una clave para el token en el localStorage
 
   constructor(private http: HttpClient) { }
 
 // Obra
 
-getObraById(id: number): Observable<Obra> {
+  getObraById(id: number): Observable<Obra> {
   return this.http.get<Obra>(`${this.apiUrl}/api/obra/${id}`).pipe(
     catchError(this.handleError<Obra>('getObraById'))
   );
   }
-
-
   getGenerosByObraId(id: number): Observable<Genero[]> {
     return this.http.get<Genero[]>(`${this.apiUrl}/obra/${id}/generos`);
   }
+// Método para obtener obras por género
+  getObrasByGenero(generoId: number): Observable<Obra[]> {
+  const url = `${this.apiUrl}/generos/${generoId}`; // Endpoint en el backend Symfony
+  return this.http.get<Obra[]>(url);
+}
 
+  // Método para buscar libros por título
+  searchBooksByTitle(titulo: string): Observable<Obra[]> {
+    const url = `${this.apiUrl}/obra/busqueda/${titulo}`;
+    return this.http.get<Obra[]>(url);
+  }
 
 // Usuario
 
@@ -67,8 +76,13 @@ getObraById(id: number): Observable<Obra> {
     );
   }
 
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/api/usuarios`).pipe(
+      catchError(this.handleError<User[]>('getUsers', []))
+    );
+  }
 
- updateUser(email: string, name: string, pswd: string): Observable<any> {
+  updateUser(email: string, name: string, pswd: string): Observable<any> {
   const body = { name, pswd }; // Crear el cuerpo de la petición directamente como un objeto
 
   return this.http.put(`${this.apiUrl}/api/usuario/editar/${email}`, body).pipe(
@@ -76,7 +90,7 @@ getObraById(id: number): Observable<Obra> {
   );
 }
 
-deleteUser(userId: number): Observable<any> {
+  deleteUser(userId: number): Observable<any> {
   return this.http.delete(`${this.apiUrl}/api/usuarios/${userId}`).pipe(
     catchError(this.handleError<any>('deleteUser'))
   );
@@ -87,10 +101,6 @@ deleteUser(userId: number): Observable<any> {
       catchError(this.handleError<any>('getCapitulo'))
     );
   }
-
-
-
-
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
